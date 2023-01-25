@@ -1,0 +1,40 @@
+@import 'sass';
+.Spinner {
+	width: 80px;
+	height: 80px;
+
+	position: relative;
+	margin: 100px auto;
+
+	.DoubleBounce1,
+	.DoubleBounce2 {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-color: #fff;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		-webkit-animation: skBounce 2s infinite ease-in-out;
+		animation: skBounce 2s infinite ease-in-out;
+	}
+
+	.DoubleBounce2 {
+		-webkit-animation-delay: -1s;
+		animation-delay: -1s;
+	}
+
+	@keyframes skBounce {
+		0% {
+			-webkit-transform: scale(0);
+		}
+		50% {
+			-webkit-transform: scale(1);
+		}
+		100% {
+			-webkit-transform: scale(0);
+		}
+	}
+}

@@ -1,0 +1,961 @@
+@import 'sass';
+
+.Home {
+	width: 100vw;
+	height: 470vh;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	overflow-x: hidden;
+
+	.Right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 150vh;
+		width: 100%;
+		z-index: -9;
+		background-color: $color-right;
+	}
+	.Left {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 150vh;
+		width: 100%;
+		background-color: $color-background-main;
+		z-index: -9;
+
+		&Top {
+			@extend .Left;
+			animation: leftSlideIn 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
+		}
+
+		&Scroll {
+			@extend .Left;
+			animation: leftExpand 1.5s cubic-bezier(0.3, 0.05, 0.5, 0.95) 0s 1 normal forwards;
+		}
+	}
+
+	.Hello {
+		position: fixed;
+		top: 50vh;
+		left: 50vw;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		font-size: 200px;
+		font-weight: bold;
+		font-family: 'Aboreto';
+		opacity: 0;
+		animation: appear 1s ease-in 0s 1 normal forwards;
+		transition: left 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+		.He {
+			font-family: 'Aboreto';
+			margin-bottom: -50px;
+		}
+		.Llo {
+			font-family: 'Aboreto';
+		}
+
+		@media screen and (max-width: $breakpoint-desktop) {
+			font-size: 175px;
+			.He {
+				margin-bottom: -45px;
+			}
+		}
+		@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-tablet) {
+			font-size: 150px;
+			.He {
+				margin-bottom: -40px;
+			}
+		}
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile) {
+			font-size: 120px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			font-size: 100px;
+			left: 54vw;
+			.He {
+				margin-bottom: -30px;
+			}
+		}
+
+		&Scroll {
+			@extend .Hello;
+			left: 97vw;
+			@media screen and (max-width: $breakpoint-mobile) {
+				left: 110vw;
+			}
+		}
+	}
+
+	.Intro {
+		position: fixed;
+		top: 35vh;
+		left: 15vw;
+		opacity: 0;
+		// width: 35%;
+		transition: all 0.5s ease;
+		@media screen and (max-width: $breakpoint-tablet) {
+			width: 300px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			top: 40vh;
+			width: 200px;
+		}
+		.IntroIcon {
+			fill: none;
+			stroke: black;
+			stroke-width: 3;
+			stroke-dasharray: 300;
+			stroke-dashoffset: 300;
+			transform: scale(0.3);
+			transition: all 1s ease 0.8s;
+
+			&Appear {
+				@extend .IntroIcon;
+				stroke-dashoffset: 0;
+			}
+		}
+		h2 {
+			color: black;
+			font-size: 40px;
+			font-weight: 300;
+			letter-spacing: 1pt;
+			margin-bottom: 10px;
+			@media screen and (max-width: $breakpoint-medium) {
+				font-size: 35px;
+			}
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: 30px;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+				font-size: 25px;
+			}
+		}
+		h3 {
+			color: $color-alternate;
+			font-size: 30px;
+			letter-spacing: 0.5pt;
+			font-weight: 100;
+			@media screen and (max-width: $breakpoint-medium) {
+				font-size: 27px;
+			}
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: 22px;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+				font-size: 20px;
+			}
+		}
+		&Appear {
+			@extend .Intro;
+			animation: fadeInLift 1s 0.5s forwards;
+		}
+	}
+
+	.BannerCoding {
+		display: block;
+		position: fixed;
+		top: 0;
+		height: 100vh;
+		width: 100vw;
+		background-image: url('../../../images/coding_compressed.jpg');
+		background-size: cover;
+		// background-attachment: fixed;
+		background-position: 70% bottom;
+		z-index: -100;
+	}
+
+	main {
+		position: absolute;
+		top: 200vh;
+		width: 100%;
+		height: 220vh;
+		background-color: $color-background-two;
+
+		.WebDev {
+			position: relative;
+			height: 50%;
+
+			.WebDevMain {
+				position: absolute;
+				top: 15%;
+				left: 20%;
+				@media screen and (max-width: $breakpoint-large) {
+					left: 16%;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					left: 15%;
+				}
+				height: 700px;
+				width: 350px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				@media screen and (max-width: $breakpoint-tablet) and (orientation: portrait) {
+					top: 0;
+					height: 70%;
+					left: 0;
+					width: 100%;
+					padding: 10%;
+				}
+				@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+					top: 5%;
+					left: 7%;
+					height: 70%;
+					width: 45%;
+				}
+				@media screen and (max-height: $breakpoint-mobile) and (orientation: landscape) {
+					top: 5%;
+					left: 7%;
+					height: 95%;
+					width: 45%;
+				}
+				.Title {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					font-size: 120px;
+					font-weight: normal;
+					font-family: 'Aboreto';
+					color: $color-headers;
+					opacity: 0;
+					.WDIcon {
+						fill: none;
+						stroke: black;
+						stroke-width: 4;
+						stroke-dasharray: 300;
+						stroke-dashoffset: 300;
+						transform: scale(0.5);
+						transition: all 1.5s ease 0.5s;
+
+						&Appear {
+							@extend .WDIcon;
+							stroke-dashoffset: 0;
+						}
+					}
+					.Web {
+						font-family: 'Aboreto';
+						margin-bottom: -30px;
+					}
+					.Dev {
+						font-family: 'Aboreto';
+					}
+
+					@media screen and (max-width: $breakpoint-desktop) {
+						font-size: 100px;
+						.Web {
+							margin-bottom: -20px;
+						}
+					}
+					@media screen and (max-width: $breakpoint-medium) {
+						font-size: 80px;
+						.Web {
+							margin-bottom: -18px;
+						}
+					}
+					@media screen and (max-width: $breakpoint-mobile) {
+						font-size: 60px;
+						.Web {
+							margin-bottom: -18px;
+						}
+					}
+					@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+						font-size: 70px;
+						.Web {
+							margin-bottom: -18px;
+						}
+					}
+
+					&Appear {
+						@extend .Title;
+						animation: fadeInLift 1.5s forwards;
+					}
+				}
+				.Text {
+					opacity: 0;
+					h2 {
+						// color: $color-secondary;
+						color: $color-dark;
+						font-size: 28px;
+						letter-spacing: 0.5pt;
+						font-weight: 100;
+
+						@media screen and (max-width: $breakpoint-large) {
+							font-size: 26px;
+						}
+						@media screen and (max-width: $breakpoint-medium) {
+							font-size: 24px;
+						}
+						@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-tablet) {
+							font-size: 22px;
+						}
+					}
+					&Appear {
+						@extend .Text;
+						animation: fadeInLift 1s 0.5s forwards;
+					}
+				}
+				.Buttons {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: flex-start;
+					opacity: 0;
+					// color: white;
+
+					a {
+						text-decoration: none;
+						// color: white;
+					}
+
+					@media screen and (max-width: $breakpoint-tablet) and (orientation: portrait) {
+						justify-content: space-around;
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+					}
+					@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+						justify-content: space-around;
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+					}
+					@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+						flex-direction: column;
+						width: 100%;
+						.Portfolio {
+							align-self: flex-end;
+						}
+					}
+
+					&Appear {
+						@extend .Buttons;
+						animation: fadeInLift 1s 0.5s forwards;
+					}
+				}
+			}
+
+			.WebDevTetris {
+				position: absolute;
+				top: 25%;
+				left: 58%;
+				height: 600px;
+				width: 450px;
+
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+					display: none;
+				}
+				@media screen and (max-width: $breakpoint-desktop) {
+					height: 500px;
+					width: 375px;
+					top: 35%;
+				}
+				@media screen and (max-width: $breakpoint-large) {
+					left: 55%;
+				}
+				@media screen and (max-width: 1200px) {
+					height: 400px;
+					width: 300px;
+					top: 30%;
+				}
+				// border: 1px solid black;
+				// box-sizing: content-box;
+
+				@mixin icon {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					color: black;
+					font-size: 28px;
+					font-weight: 100;
+					text-align: center;
+					p {
+						margin-top: 5px;
+						font-size: 20px;
+						font-weight: 300;
+					}
+
+					@media screen and (max-width: 1200px) {
+						p {
+							font-size: 16px;
+						}
+					}
+				}
+
+				.WebDev1 {
+					transform: translateY(200px);
+					position: absolute;
+					top: 49%;
+					left: 0;
+					height: 50%;
+					width: 100%;
+					// background-color: rgba($color: #ffffff, $alpha: 0.7);
+
+					.WebDev1A {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						height: 100%;
+						width: 67%;
+						background-color: $color-contact;
+						border-top: 4px solid black;
+						border-left: 4px solid black;
+						border-bottom: 4px solid black;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: 1fr 1fr;
+						@media screen and (max-width: 1200px) {
+							border-top: 2px solid black;
+							border-left: 2px solid black;
+							border-bottom: 2px solid black;
+						}
+						.Icon {
+							@include icon();
+						}
+					}
+					.WebDev1B {
+						position: absolute;
+						bottom: 0;
+						left: 67%;
+						height: 50%;
+						width: 33%;
+						background-color: $color-contact;
+						border-top: 4px solid black;
+						border-right: 4px solid black;
+						border-bottom: 4px solid black;
+						@include flex-center;
+						@media screen and (max-width: 1200px) {
+							border-top: 2px solid black;
+							border-right: 2px solid black;
+							border-bottom: 2px solid black;
+						}
+
+						.Icon {
+							@include icon();
+						}
+					}
+					.WebDev1C {
+						position: absolute;
+						top: 0;
+						left: 67%;
+						height: 50%;
+						width: 33%;
+						background-color: none;
+						border-left: 4px solid black;
+						@media screen and (max-width: 1200px) {
+							border-left: 2px solid black;
+						}
+					}
+				}
+				.WebDev2 {
+					transform: translateX(200px);
+					position: absolute;
+					right: 0;
+					top: 24.5%;
+					height: 50%;
+					width: 33%;
+					// background-color: rgba($color: #ffffff, $alpha: 0.7);
+
+					background-color: $color-fitness;
+					border: 4px solid black;
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-template-rows: 1fr 1fr;
+					@media screen and (max-width: 1200px) {
+						border: 2px solid black;
+					}
+					.Icon {
+						@include icon();
+					}
+				}
+				.WebDev3 {
+					transform: translateY(-200px);
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 50%;
+					width: 100%;
+					// background-color: rgba($color: #ffffff, $alpha: 0.7);
+
+					.WebDev3A {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 67%;
+						background-color: $color-background-main;
+						border-top: 4px solid black;
+						border-left: 4px solid black;
+						border-bottom: 4px solid black;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: 1fr 1fr;
+						@media screen and (max-width: 1200px) {
+							border-top: 2px solid black;
+							border-left: 2px solid black;
+							border-bottom: 2px solid black;
+						}
+						.Icon {
+							@include icon();
+						}
+					}
+					.WebDev3B {
+						position: absolute;
+						top: 0;
+						left: 67%;
+						height: 50%;
+						width: 33%;
+						background-color: $color-background-main;
+						border-top: 4px solid black;
+						border-right: 4px solid black;
+						border-bottom: 4px solid black;
+						@include flex-center;
+						@media screen and (max-width: 1200px) {
+							border-top: 2px solid black;
+							border-right: 2px solid black;
+							border-bottom: 2px solid black;
+						}
+
+						.Icon {
+							@include icon();
+						}
+					}
+					.WebDev3C {
+						position: absolute;
+						top: 50%;
+						left: 67%;
+						height: 50%;
+						width: 33%;
+						background-color: none;
+						border-left: 4px solid black;
+						@media screen and (max-width: 1200px) {
+							border-left: 2px solid black;
+						}
+					}
+				}
+			}
+
+			.WebDevInfoMobile {
+				border-top: 2px black solid;
+				border-bottom: 2px black solid;
+				background-color: rgba($color: #ffffff, $alpha: 0.7);
+				padding: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				letter-spacing: 1pt;
+				color: $color-black;
+
+				@media screen and (orientation: portrait) {
+					position: absolute;
+					top: 67%;
+					left: 0;
+					height: 35%;
+					width: 100%;
+				}
+				@media screen and (orientation: landscape) {
+					position: absolute;
+					top: 10%;
+					right: 0;
+					height: 80%;
+					width: 45%;
+					border-left: 2px black solid;
+					border-top-left-radius: 15px;
+					border-bottom-left-radius: 15px;
+				}
+
+				display: none;
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+					display: flex;
+				}
+
+				.WebDevContainerMobile {
+					height: 100%;
+					width: 100%;
+					font-size: 16px;
+					font-weight: 100;
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-rows: 1fr 1fr 1fr 1fr;
+					.Icon {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+					}
+				}
+			}
+		}
+		.Fitness {
+			position: relative;
+			height: 50%;
+
+			.Title {
+				position: absolute;
+				top: 8%;
+				left: 18%;
+				@media screen and (max-width: $breakpoint-desktop) {
+					top: 10%;
+				}
+				@media screen and (max-width: $breakpoint-large) {
+					left: 16%;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					left: 15%;
+				}
+				height: 400px;
+				width: 800px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 100px;
+				font-weight: normal;
+				font-family: 'Aboreto';
+				color: $color-headers;
+				opacity: 0;
+				@media screen and (max-width: $breakpoint-tablet) {
+					top: 10%;
+					left: 10%;
+					width: 70%;
+					white-space: nowrap;
+				}
+
+				.HFIcon {
+					fill: none;
+					stroke: black;
+					stroke-width: 4;
+					stroke-dasharray: 300;
+					stroke-dashoffset: 300;
+					transform: scale(0.5);
+					transition: all 1.5s ease 0.5s;
+
+					&Appear {
+						@extend .HFIcon;
+						stroke-dashoffset: 0;
+					}
+				}
+
+				.Health {
+					font-family: 'Aboreto';
+					margin-bottom: -25px;
+				}
+				.Fit {
+					font-family: 'Aboreto';
+				}
+
+				@media screen and (max-width: $breakpoint-desktop) {
+					font-size: 90px;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					font-size: 80px;
+				}
+				@media screen and (max-width: $breakpoint-tablet) {
+					font-size: 70px;
+					.Health {
+						margin-bottom: -15px;
+					}
+				}
+				@media screen and (max-width: $breakpoint-mobile) {
+					font-size: 55px;
+					.Health {
+						margin-bottom: -10px;
+					}
+				}
+
+				@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+					font-size: 70px;
+					left: 7%;
+					.Health {
+						margin-bottom: -15px;
+					}
+				}
+				@media screen and (max-height: $breakpoint-mobile) and (orientation: landscape) {
+					font-size: 55px;
+					.Health {
+						margin-bottom: -10px;
+					}
+				}
+
+				&Appear {
+					@extend .Title;
+					animation: fadeInLift 1.5s forwards;
+				}
+			}
+			.FitnessInfo {
+				position: absolute;
+				top: 26%;
+				left: 50%;
+				height: 60%;
+				width: 37%;
+				min-width: 300px;
+				padding-left: 100px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+
+				@media screen and (max-width: $breakpoint-tablet) and (orientation: portrait) {
+					top: 22%;
+					left: 0;
+					width: 100%;
+					padding: 10%;
+				}
+				@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+					top: 20%;
+					height: 55%;
+					justify-content: space-evenly;
+				}
+				@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+					top: 20%;
+					right: 0;
+					height: 70%;
+					width: 50%;
+				}
+				@media screen and (max-height: $breakpoint-mobile) and (orientation: landscape) {
+					top: 10%;
+					right: 0;
+					height: 70%;
+					width: 50%;
+				}
+				.Text {
+					opacity: 0;
+					margin: 50px 0 30px;
+					.HFIcons {
+						width: 100%;
+						font-size: 30px;
+						display: flex;
+						justify-content: space-evenly;
+						margin: 30px 0;
+						color: $color-dark;
+					}
+					h2 {
+						color: $color-dark;
+						font-size: 28px;
+						letter-spacing: 0.5pt;
+						font-weight: 100;
+						@media screen and (max-width: $breakpoint-large) {
+							font-size: 25px;
+						}
+						@media screen and (max-width: $breakpoint-medium) {
+							font-size: 24px;
+						}
+						@media screen and (max-width: $breakpoint-tablet) and (orientation: portrait) {
+							font-size: 25px;
+						}
+						@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+							font-size: 22px;
+						}
+						@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+							font-size: 22px;
+						}
+						@media screen and (max-height: $breakpoint-mobile) and (orientation: landscape) {
+							font-size: 20px;
+						}
+					}
+					@media screen and (max-width: $breakpoint-tablet) {
+						margin: 20px 0;
+					}
+					&Appear {
+						@extend .Text;
+						animation: fadeInLift 1s 0.5s forwards;
+					}
+				}
+				.Buttons {
+					// width: 400px;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					opacity: 0;
+					color: white;
+					width: 100%;
+					a {
+						text-decoration: none;
+						color: white;
+					}
+					@media screen and (max-width: $breakpoint-tablet) {
+						justify-content: center;
+					}
+
+					&Appear {
+						@extend .Buttons;
+						animation: fadeInLift 1s 0.5s forwards;
+					}
+				}
+			}
+
+			.FitnessPicture {
+				position: absolute;
+				top: 38%;
+				left: 0;
+				height: 320px;
+				width: 50%;
+				background: url(../../../images/hiking_compressed.jpg);
+				background-size: cover;
+				background-position-x: center;
+				background-position-y: 0%;
+				background-repeat: no-repeat;
+
+				.FitnessPictureCover {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					right: 0;
+					background: $color-background-two;
+
+					@keyframes unwrap {
+						from {
+							width: 100%;
+						}
+						to {
+							width: 0%;
+						}
+					}
+					@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+						display: none;
+					}
+
+					&Unwrap {
+						@extend .FitnessPictureCover;
+						animation: unwrap 0.75s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+					}
+				}
+
+				@media screen and (max-width: $breakpoint-large) {
+					top: 40%;
+					height: 275px;
+					width: 50%;
+				}
+				@media screen and (max-width: $breakpoint-tablet) and (orientation: portrait) {
+					top: 70%;
+					height: 35%;
+					width: 100%;
+				}
+				@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+					top: 78%;
+					height: 25%;
+					width: 100%;
+					border-radius: none;
+				}
+				@media screen and (max-height: $breakpoint-tablet) and (orientation: landscape) {
+					top: 40%;
+					width: 50%;
+					height: 45%;
+				}
+				@media screen and (max-height: $breakpoint-mobile) and (orientation: landscape) {
+					top: 50%;
+					width: 50%;
+					height: 45%;
+				}
+
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+					display: none;
+				}
+
+				&Mobile {
+					@extend .FitnessPicture;
+					background-position-y: center;
+
+					display: none;
+					@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.Contact {
+		position: absolute;
+		bottom: 0;
+		height: 100vh;
+		width: 100%;
+		z-index: -8;
+		background-color: #d3d3d3;
+
+		.ContactInfo {
+			position: absolute;
+			top: 33%;
+			left: 50%;
+			transform: translateX(-50%);
+			@include flex-center;
+			flex-direction: column;
+			white-space: nowrap;
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			h2 {
+				font-family: 'Aboreto';
+				font-size: 35px;
+				font-weight: 100;
+			}
+			.ContactLinks {
+				margin-top: 20px;
+				width: 100%;
+				font-size: 35px;
+				@include flex-center;
+				justify-content: space-evenly;
+
+				a {
+					color: black;
+					text-decoration: none;
+				}
+			}
+		}
+
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			display: none;
+		}
+
+		&Mobile {
+			@extend .Contact;
+			.ContactInfo {
+				top: 69%;
+				a {
+					color: black;
+					text-decoration: none;
+				}
+				h2 {
+					font-family: 'Aboreto';
+					font-size: 30px;
+					font-weight: 100;
+				}
+				.ContactLinks {
+					font-size: 30px;
+				}
+
+				opacity: 0;
+				@keyframes contactMobileDropIn {
+					from {
+						opacity: 0;
+						transform: translate(-50%, -200%);
+					}
+					to {
+						opacity: 1;
+						transform: translate(-50%, 0%);
+					}
+				}
+				&Appear {
+					@extend .ContactInfo;
+					animation: contactMobileDropIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+				}
+			}
+
+			display: none;
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+				display: block;
+			}
+		}
+	}
+}

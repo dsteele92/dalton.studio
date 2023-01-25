@@ -1,0 +1,69 @@
+// ---> BREAKPOINTS:
+// -----> *** If you change these make sure to change them inside the functional components that use them for animations ***
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-medium: 992px;
+$breakpoint-large: 1600px;
+$breakpoint-desktop: 2100px;
+
+$breakpoint-mobile-landscape: 650px;
+
+// ---> COLORS:
+$color-background-main: #a66060;
+$color-background-two: #eaeaea;
+$color-background-three: #f4f1de;
+
+$color-about: #65786e;
+// $color-about: #81b29a;
+// $color-coding: #023e8a;
+$color-coding: #dddddd;
+$color-fitness: #f4f1de;
+$color-contact: #5e748e;
+// dfd271
+
+$color-right: #dddddd;
+$color-secondary: #f4f1de;
+$color-alternate: #dddddd;
+$color-light: #f3f3f3;
+$color-dark: #000000;
+
+$color-headers: #010306;
+$color-black: #010306;
+
+// $color-buttons: #f4f1de;
+$color-buttons: #6a7f99;
+$color-button-alternate: #ded8af;
+$color-text-light: #fffbe8;
+$color-text-dark: #010306;
+
+// so far best:
+// $color-background-main: #506997;
+// $color-background-two: #a66060;
+// $color-background-three: #f4f1de;
+
+// $color-right: #dddddd;
+// $color-secondary: #f4f1de;
+
+// red/cream:
+// $color-background-main: #e07a5f;
+// $color-background-two: #f4f1de;
+// $color-background-three: #81b29a;
+
+// blue/grey:
+// $color-background-main: #506997;
+// $color-right: #dddddd;
+
+// $color-background-main: #506997;
+// $color-background-main: #6b9080;
+// $color-right: #cacaca;
+// $color-right: #dddddd;
+// $color-right: #eaf4f4;
+// $color-secondary: #506997;
+// $color-secondary: bisque;
+// $color-text-dark: #da4141;
+
+// ---> Others:
+$padding-vertical: 50px;
+$padding-vertical-mobile: 35px;
+$padding-horizontal: 60px;
+$padding-horizontal-mobile: 40px;

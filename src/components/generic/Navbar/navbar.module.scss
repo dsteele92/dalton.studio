@@ -1,0 +1,704 @@
+@import 'sass';
+
+.Container {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: none;
+	}
+
+	.Top {
+		width: 100vw;
+		height: $padding-vertical;
+		position: fixed;
+		top: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		animation: slideDown 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
+		&MenuActive {
+			@extend .Top;
+			height: 10%;
+		}
+	}
+	.Bottom {
+		width: 100vw;
+		height: $padding-vertical;
+		position: fixed;
+		bottom: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		animation: slideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
+		&MenuActive {
+			@extend .Bottom;
+			height: 10%;
+		}
+	}
+	.Left {
+		width: $padding-horizontal;
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		animation: slideRight 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
+		&MenuActive {
+			@extend .Left;
+			width: 70%;
+		}
+	}
+	.Right {
+		width: $padding-horizontal;
+		height: 100vh;
+		position: fixed;
+		right: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		animation: slideLeft 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
+		&MenuActive {
+			@extend .Right;
+			width: 10%;
+			z-index: 102;
+		}
+	}
+}
+
+.Header {
+	position: fixed;
+	top: 15px;
+	left: $padding-horizontal;
+	font-size: 20px;
+	letter-spacing: 1pt;
+	font-weight: 300;
+	font-family: 'Aboreto';
+	position: fixed;
+	z-index: 100;
+	opacity: 0;
+	animation: appear 1s ease-in 0.5s forwards;
+	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: none;
+	}
+
+	&MenuActive {
+		@extend .Header;
+		top: 7%;
+		left: 15%;
+		@media screen and (max-width: 1100px) {
+			left: 20%;
+		}
+	}
+}
+
+.HeaderMobile {
+	@extend .Header;
+	transition: 0.5s ease;
+	display: none;
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: block;
+	}
+	@media (orientation: landscape) {
+		top: 5%;
+		left: 3%;
+	}
+	@media (orientation: portrait) {
+		top: 3%;
+		left: 5%;
+	}
+
+	&Scroll {
+		@extend .HeaderMobile;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			opacity: 1;
+			animation: disappear 1s ease-in forwards;
+		}
+	}
+}
+
+.RightNav {
+	height: 100%;
+	width: $padding-horizontal;
+	position: fixed;
+	right: 0;
+	z-index: 102;
+
+	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	&MenuActive {
+		@extend .RightNav;
+		transform: translateX(100%);
+	}
+}
+
+.MenuBar {
+	height: 100%;
+	width: $padding-horizontal;
+	position: fixed;
+	left: 0;
+	z-index: 100;
+	opacity: 0;
+	animation: appear 1s ease-in 0.5s 1 normal forwards;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.Icon {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		cursor: pointer;
+		transform: translateX(30px);
+
+		&MenuActive {
+			@extend .Icon;
+			cursor: default;
+		}
+
+		.Bars {
+			transform: translateY(4px);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+
+			.Bar {
+				transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+				cursor: pointer;
+
+				&1Hover {
+					@extend .Bar;
+					transform: translateX(-8px);
+				}
+				&2Hover {
+					@extend .Bar;
+					transform: translateX(-13px);
+				}
+				&3Hover {
+					@extend .Bar;
+					transform: translateX(-8px);
+				}
+
+				&1X {
+					@extend .Bar;
+					transform: translate(44px, -10px) rotateZ(45deg);
+				}
+				&2X {
+					@extend .Bar;
+					display: none;
+				}
+				&3X {
+					@extend .Bar;
+					transform: translateX(50px) rotateZ(-45deg);
+				}
+			}
+
+			.Line {
+				stroke: black;
+				stroke-width: 3px;
+			}
+		}
+		.Letters {
+			margin-left: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			p {
+				height: 10px;
+				width: 10px;
+				font-size: 10px;
+				font-weight: 300;
+				transform: rotateZ(-90deg);
+				text-align: center;
+				transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			}
+
+			.U {
+				transform: translateX(6px) rotateZ(-90deg);
+				// color: #ffffff;
+			}
+			.N {
+				transform: translateX(-4px) rotateZ(-90deg);
+				// color: #ffffff;
+			}
+			.E {
+				transform: translateX(4px) rotateZ(-90deg);
+				// color: #ffffff;
+			}
+			.M {
+				transform: translateX(-8px) rotateZ(-90deg);
+				// color: #ffffff;
+			}
+
+			&MenuActive {
+				display: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: none;
+	}
+}
+
+.Menu {
+	position: fixed;
+	z-index: 102;
+	left: 15%;
+	@media screen and (max-width: 1100px) {
+		left: 20%;
+	}
+	top: 0;
+	height: 100%;
+	width: 300px;
+	// border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	opacity: 0;
+	transform: translateX(-100vh);
+
+	&Active {
+		@extend .Menu;
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	.List {
+		list-style: none;
+		position: relative;
+		height: 70px;
+		width: fit-content;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden;
+		transform: rotateX(90deg);
+		transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+
+		.Current {
+			cursor: default;
+		}
+
+		h3 {
+			font-size: 24px;
+			letter-spacing: 1pt;
+			font-weight: 100;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.Highlight {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-105%, -50%);
+			height: 10px;
+			width: 100%;
+			transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			&Home {
+				@extend .Highlight;
+				background-color: rgba($color: $color-background-main, $alpha: 0.3);
+				&Current {
+					@extend .HighlightHome;
+					transform: translate(0, -50%);
+				}
+			}
+			&About {
+				@extend .Highlight;
+				background-color: rgba($color: #6c8a7a, $alpha: 0.3);
+				&Current {
+					@extend .HighlightAbout;
+					transform: translate(0, -50%);
+				}
+			}
+			&Coding {
+				@extend .Highlight;
+				background-color: rgba($color: #878787, $alpha: 0.3);
+				&Current {
+					@extend .HighlightCoding;
+					transform: translate(0, -50%);
+				}
+			}
+			&Fitness {
+				@extend .Highlight;
+				background-color: rgba($color: #dfd271, $alpha: 0.3);
+				&Current {
+					@extend .HighlightFitness;
+					transform: translate(0, -50%);
+				}
+			}
+			&Contact {
+				@extend .Highlight;
+				background-color: rgba($color: $color-contact, $alpha: 0.3);
+				&Current {
+					@extend .HighlightContact;
+					transform: translate(0, -50%);
+				}
+			}
+		}
+
+		&:hover {
+			.Highlight {
+				transform: translate(0, -50%);
+			}
+		}
+
+		&Fall {
+			@extend .List;
+			transform: rotateX(0);
+		}
+	}
+	.Contact {
+		position: absolute;
+		bottom: 10%;
+		left: 0;
+		width: 70px;
+		font-size: 25px;
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: black;
+			text-decoration: none;
+			transition: all 0.2s linear;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+}
+
+.MenuBackground {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	right: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: $color-background-main;
+	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+	// transform: translateY(500px);
+
+	&Active {
+		@extend .MenuBackground;
+		display: block;
+		opacity: 0;
+		animation: appear 0.5s forwards;
+	}
+	&MobileActive {
+		@extend .MenuBackground;
+		display: block;
+		opacity: 0;
+		animation: appear 0.5s forwards;
+	}
+}
+
+.about {
+	background-color: #6c8a7a;
+}
+.portfolio {
+	background-color: #878787;
+}
+.fitness {
+	background-color: $color-background-three;
+}
+.contact {
+	background-color: $color-contact;
+}
+
+.MobileNav {
+	position: fixed;
+	@media screen and (orientation: portrait) {
+		top: 3%;
+		right: 8%;
+	}
+	@media screen and (orientation: landscape) {
+		top: 5%;
+		right: 5%;
+	}
+
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	z-index: 200;
+	@include flex-center;
+	font-size: 25px;
+	border-radius: 50%;
+	display: none;
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: flex;
+	}
+
+	.IconMobile {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		cursor: pointer;
+		// transform: translateX(30px);
+
+		&Active {
+			@extend .Icon;
+			cursor: default;
+		}
+
+		.Bars {
+			transform: translateY(3px);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+
+			.Bar {
+				transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+				cursor: pointer;
+
+				&1X {
+					@extend .Bar;
+					transform: translateY(4px) rotateZ(-45deg);
+				}
+				&2X {
+					@extend .Bar;
+					display: none;
+				}
+				&3X {
+					@extend .Bar;
+					transform: translateY(-4px) rotateZ(45deg);
+				}
+			}
+
+			.Line {
+				stroke: black;
+				stroke-width: 2px;
+			}
+		}
+	}
+}
+
+.MobileContainer {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+
+	display: none;
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		display: block;
+	}
+
+	.TopMobile {
+		width: 100vw;
+		height: 2%;
+		position: fixed;
+		top: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateY(-105%);
+		&Active {
+			@extend .TopMobile;
+			transform: translateY(0);
+		}
+	}
+	.BottomMobile {
+		width: 100vw;
+		height: 5%;
+		position: fixed;
+		bottom: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateY(105%);
+		&Active {
+			@extend .BottomMobile;
+			transform: translateY(0);
+		}
+	}
+	.LeftMobile {
+		width: 84%;
+		@media screen and (max-width: 700px) {
+			width: 83%;
+		}
+		@media screen and (max-width: 600px) {
+			width: 82%;
+		}
+		@media screen and (max-width: 500px) {
+			width: 80%;
+		}
+		@media screen and (max-width: 400px) {
+			width: 78%;
+		}
+		@media screen and (max-width: 300px) {
+			width: 76%;
+		}
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateX(-105%);
+		&Active {
+			@extend .LeftMobile;
+			transform: translateX(0);
+		}
+	}
+	.RightMobile {
+		@media screen and (orientation: portrait) {
+			width: 6%;
+		}
+		@media screen and (orientation: landscape) {
+			width: 3%;
+		}
+		height: 100vh;
+		position: fixed;
+		right: 0;
+		background: white;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		transform: translateX(105%);
+		&Active {
+			@extend .RightMobile;
+			transform: translateX(0);
+		}
+	}
+}
+.MobileMenu {
+	position: fixed;
+	z-index: 105;
+	top: 0;
+	left: 10%;
+	height: 100%;
+	width: 75%;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
+	// align-items: flex-start;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	opacity: 0;
+	transform: translateY(-100vh);
+
+	ul {
+		position: absolute;
+		top: 15%;
+		left: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+
+		@media screen and (max-height: 600px) {
+			top: 10%;
+			height: 60%;
+		}
+
+		.List {
+			list-style: none;
+			position: relative;
+			height: 70px;
+			width: fit-content;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			overflow: hidden;
+			transform: rotateX(90deg);
+			transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+
+			.Current {
+				cursor: default;
+			}
+
+			h3 {
+				font-size: 20px;
+				letter-spacing: 0.5pt;
+				font-weight: 100;
+			}
+
+			a {
+				text-decoration: none;
+				color: black;
+			}
+
+			.HighlightCurrent {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(0, -50%);
+				height: 10px;
+				width: 100%;
+
+				&Home {
+					@extend .HighlightCurrent;
+					background-color: rgba($color: $color-background-main, $alpha: 0.3);
+				}
+
+				&About {
+					@extend .HighlightCurrent;
+					background-color: rgba($color: #6c8a7a, $alpha: 0.3);
+				}
+
+				&Coding {
+					@extend .HighlightCurrent;
+					background-color: rgba($color: #878787, $alpha: 0.3);
+				}
+
+				&Fitness {
+					@extend .HighlightCurrent;
+					background-color: rgba($color: #dfd271, $alpha: 0.3);
+				}
+
+				&Contact {
+					@extend .HighlightCurrent;
+					background-color: rgba($color: $color-contact, $alpha: 0.3);
+				}
+			}
+
+			&:hover {
+				.Highlight {
+					transform: translate(0, -50%);
+				}
+			}
+
+			&Fall {
+				@extend .List;
+				transform: rotateX(0);
+			}
+		}
+	}
+	&Active {
+		@extend .MobileMenu;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.ContactMobile {
+		position: absolute;
+		bottom: 15%;
+		left: 0;
+		width: 70px;
+		font-size: 22px;
+		display: flex;
+		justify-content: space-between;
+		transform: rotateX(90deg);
+		transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+		a {
+			color: black;
+			text-decoration: none;
+			transition: all 0.2s linear;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+
+		&Fall {
+			@extend .ContactMobile;
+			transform: rotateX(0);
+		}
+	}
+}
