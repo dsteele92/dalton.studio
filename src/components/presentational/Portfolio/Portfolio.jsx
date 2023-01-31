@@ -19,12 +19,12 @@ import {
 } from 'react-icons/di';
 
 const goalsAppImg = require('../../../images/goals_app.png');
-const weatherAppImg = require('../../../images/weather_app_screenshot.png');
+const bookingImg = require('../../../images/direct_booking_screenshot.png');
 const findFirmImg = require('../../../images/find_firm.png');
 const lifeImprovementsImg = require('../../../images/life_improvements.png');
 const weeklyGoalsGif = require('../../../gifs/GoalsAppGif.gif');
 const findFirmGif = require('../../../gifs/FindFirmGif.gif');
-const weatherAppGif = require('../../../gifs/WeatherAppGif.gif');
+const bookingGif = require('../../../gifs/bookingGif.gif');
 const triviaImg = require('../../../images/trivia_game.png');
 const triviaGif = require('../../../gifs/trivia_game.gif');
 
@@ -39,14 +39,9 @@ export default function Portfolio() {
 	const [playGif4, setPlayGif4] = useState(false);
 
 	const goalsAppPic = useRef();
-	const weatherAppPic = useRef();
+	const bookingPic = useRef();
 	const findFirmPic = useRef();
 	const triviaGamePic = useRef();
-	// const lifeImprovementPic = useRef();
-	const goalsGif = useRef();
-	const findGif = useRef();
-	const weatherGif = useRef();
-	const triviaGameGif = useRef();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -91,37 +86,22 @@ export default function Portfolio() {
 		};
 
 		let goalsAppPicCurrent = goalsAppPic.current;
-		let weatherAppPicCurrent = weatherAppPic.current;
+		let bookingPicCurrent = bookingPic.current;
 		let findFirmPicCurrent = findFirmPic.current;
 		let triviaPicCurrent = triviaGamePic.current;
-		// let lifeImprovementPicCurrent = lifeImprovementPic.current;
-		// let goalsGifCurrent = goalsGif.current;
-		// let findGifCurrent = findGif.current;
-		// let weatherGifCurrent = weatherGif.current;
-		// let triviaGifCurrent = triviaGameGif.current;
 
 		goalsAppPicCurrent.addEventListener('load', handleLoad);
-		weatherAppPicCurrent.addEventListener('load', handleLoad);
+		bookingPicCurrent.addEventListener('load', handleLoad);
 		findFirmPicCurrent.addEventListener('load', handleLoad);
 		triviaPicCurrent.addEventListener('load', handleLoad);
-		// lifeImprovementPicCurrent.addEventListener('load', handleLoad);
-		// goalsGifCurrent.addEventListener('load', handleLoad);
-		// findGifCurrent.addEventListener('load', handleLoad);
-		// weatherGifCurrent.addEventListener('load', handleLoad);
-		// triviaGifCurrent.addEventListener('load', handleLoad);
 
 		window.addEventListener('scroll', disableScroll);
 
 		return () => {
 			goalsAppPicCurrent.removeEventListener('load', handleLoad);
-			weatherAppPicCurrent.removeEventListener('load', handleLoad);
+			bookingPicCurrent.removeEventListener('load', handleLoad);
 			findFirmPicCurrent.removeEventListener('load', handleLoad);
 			triviaPicCurrent.removeEventListener('load', handleLoad);
-			// lifeImprovementPicCurrent.removeEventListener('load', handleLoad);
-			// goalsGifCurrent.removeEventListener('load', handleLoad);
-			// findGifCurrent.removeEventListener('load', handleLoad);
-			// weatherGifCurrent.removeEventListener('load', handleLoad);
-			// triviaGifCurrent.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
@@ -180,7 +160,6 @@ export default function Portfolio() {
 								className={playGif1 ? Style.GifPlay : Style.Gif}
 								src={weeklyGoalsGif}
 								alt='weekly goals app gif'
-								ref={goalsGif}
 							/>
 						</a>
 						<div className={Style.Info}>
@@ -215,27 +194,35 @@ export default function Portfolio() {
 						</div>
 					</div>
 					<div
-						className={Style.FindFirm}
-						onMouseEnter={() => setPlayGif2(true)}
-						onMouseLeave={() => setPlayGif2(false)}>
+						className={Style.Booking}
+						onMouseEnter={() => setPlayGif4(true)}
+						onMouseLeave={() => setPlayGif4(false)}>
 						<a
 							className={Style.Anchor}
-							href='http://thefindfirm.com/'
+							href='https://tabor-bnb.web.app/'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<div className={Style.Description}>
 								<h4>Web Page</h4>
-								<h3>The Find Firm, LLC</h3>
+								<h3>B&B Direct Booking Site</h3>
+								<p>(In progress)</p>
 							</div>
-							<img className={Style.Image} src={findFirmImg} alt='the find firm' ref={findFirmPic} />
+							<img className={Style.Image} src={bookingImg} alt='direct booking site' ref={bookingPic} />
 							<img
-								className={playGif2 ? Style.GifPlay : Style.Gif}
-								src={findFirmGif}
-								alt='the find firm gif'
-								ref={findGif}
+								className={playGif4 ? Style.GifPlay : Style.Gif}
+								src={bookingGif}
+								alt='weather app gif'
 							/>
 						</a>
 						<div className={Style.Info}>
+							<div className={Style.Icon}>
+								<AiOutlineCloudServer />
+								<p>API</p>
+							</div>
+							<div className={Style.Icon}>
+								<SiExpress />
+								<p>Express</p>
+							</div>
 							<div className={Style.Icon}>
 								<DiReact />
 								<p>React.js</p>
@@ -268,7 +255,6 @@ export default function Portfolio() {
 								className={playGif3 ? Style.GifPlay : Style.Gif}
 								src={triviaGif}
 								alt='trivia game gif'
-								ref={triviaGameGif}
 							/>
 						</a>
 						<div className={Style.Info}>
@@ -291,38 +277,33 @@ export default function Portfolio() {
 						</div>
 					</div>
 					<div
-						className={Style.WeatherApp}
-						onMouseEnter={() => setPlayGif4(true)}
-						onMouseLeave={() => setPlayGif4(false)}>
+						className={Style.FindFirm}
+						onMouseEnter={() => setPlayGif2(true)}
+						onMouseLeave={() => setPlayGif2(false)}>
 						<a
 							className={Style.Anchor}
-							href='https://weather-app-cbb20.web.app/'
+							href='http://thefindfirm.com/'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<div className={Style.Description}>
-								<h4>Web App</h4>
-								<h3>Weather App</h3>
+								<h4>Web Page</h4>
+								<h3>The Find Firm, LLC</h3>
 							</div>
-							<img className={Style.Image} src={weatherAppImg} alt='weather app' ref={weatherAppPic} />
+							<img className={Style.Image} src={findFirmImg} alt='the find firm' ref={findFirmPic} />
 							<img
-								className={playGif4 ? Style.GifPlay : Style.Gif}
-								src={weatherAppGif}
-								alt='weather app gif'
-								ref={weatherGif}
+								className={playGif2 ? Style.GifPlay : Style.Gif}
+								src={findFirmGif}
+								alt='the find firm gif'
 							/>
 						</a>
 						<div className={Style.Info}>
 							<div className={Style.Icon}>
-								<AiOutlineCloudServer />
-								<p>API</p>
+								<DiReact />
+								<p>React.js</p>
 							</div>
 							<div className={Style.Icon}>
-								<DiJsBadge />
-								<p>Javascript</p>
-							</div>
-							<div className={Style.Icon}>
-								<DiCss3Full />
-								<p>CSS</p>
+								<DiSass />
+								<p>Sass</p>
 							</div>
 							<div className={Style.Icon}>
 								<DiHtml5 />

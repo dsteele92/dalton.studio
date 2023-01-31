@@ -3,9 +3,7 @@
 .Portfolio {
 	width: 100vw;
 	height: 220vh;
-	position: relative;
-	// top: 0;
-	// z-index: 1;
+	position: absolute;
 	overflow-x: hidden;
 	background-color: $color-light;
 
@@ -316,6 +314,13 @@
 						letter-spacing: 0.5pt;
 						color: black;
 					}
+					p {
+						font-weight: 100;
+						font-size: 12px;
+						letter-spacing: 0.5pt;
+						font-style: italic;
+						color: black;
+					}
 				}
 				.Image {
 					// z-index: 1;
@@ -463,13 +468,13 @@
 				@include project();
 				background: linear-gradient(#a4a9dc39, #ddb8dc3d);
 			}
-			.FindFirm {
+			.Booking {
 				height: 100%;
 				width: 100%;
 				opacity: 0;
 				animation: fadeInLift 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) 1s forwards;
 				@include project();
-				background: linear-gradient(#e0d5ac48, #afb9e153);
+				background: linear-gradient(#dcd8cd52, #dab3ae52);
 			}
 			.TriviaGame {
 				height: 100%;
@@ -479,13 +484,13 @@
 				@include project();
 				background: linear-gradient(#cbd2b860, #71b8d44d);
 			}
-			.WeatherApp {
+			.FindFirm {
 				height: 100%;
 				width: 100%;
 				opacity: 0;
 				animation: fadeInLift 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) 1.4s forwards;
 				@include project();
-				background: linear-gradient(#b1dbe252, #dfa4a452);
+				background: linear-gradient(#e0d5ac48, #afb9e153);
 			}
 			// .lifeImprovements {
 			// 	height: 100%;
