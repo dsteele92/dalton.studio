@@ -65,43 +65,15 @@ export default function Portfolio() {
 			}
 		};
 
-		let loaded = 0;
-		const handleLoad = (event) => {
-			loaded++;
-			// if (window.innerWidth > 768 && window.innerHeight > 768) {
-			// 	if (loaded === 7) {
-			// 		setTimeout(() => {
-			// 			setLoaded(true);
-			// 		}, '1000');
-			// 	} else return;
-			// } else {
-			if (loaded === 4) {
-				setTimeout(() => {
-					window.removeEventListener('scroll', disableScroll);
-					window.addEventListener('scroll', handleScroll);
-					setLoaded(true);
-				}, '1000');
-			} else return;
-			// }
-		};
-
-		let goalsAppPicCurrent = goalsAppPic.current;
-		let bookingPicCurrent = bookingPic.current;
-		let findFirmPicCurrent = findFirmPic.current;
-		let triviaPicCurrent = triviaGamePic.current;
-
-		goalsAppPicCurrent.addEventListener('load', handleLoad);
-		bookingPicCurrent.addEventListener('load', handleLoad);
-		findFirmPicCurrent.addEventListener('load', handleLoad);
-		triviaPicCurrent.addEventListener('load', handleLoad);
+		setTimeout(() => {
+			window.removeEventListener('scroll', disableScroll);
+			window.addEventListener('scroll', handleScroll);
+			setLoaded(true);
+		}, '1000');
 
 		window.addEventListener('scroll', disableScroll);
 
 		return () => {
-			goalsAppPicCurrent.removeEventListener('load', handleLoad);
-			bookingPicCurrent.removeEventListener('load', handleLoad);
-			findFirmPicCurrent.removeEventListener('load', handleLoad);
-			triviaPicCurrent.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);

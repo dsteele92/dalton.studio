@@ -36,7 +36,7 @@ export default function About() {
 				window.removeEventListener('scroll', disableScroll);
 				window.addEventListener('scroll', handleScroll);
 				setLoaded(true);
-			}, '1000');
+			}, '500');
 		};
 
 		let picture = aboutMePic.current;

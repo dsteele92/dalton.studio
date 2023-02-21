@@ -21,15 +21,6 @@ export default function PersonalTraining() {
 	const [seeLinks, setSeeLinks] = useState(false);
 
 	const pic1 = useRef();
-	const AndrewPic = useRef();
-	const CayleyPic = useRef();
-	const AndrewHPic = useRef();
-	const JoannaPic = useRef();
-	const ChetPic = useRef();
-	const VijayPic = useRef();
-	const AyakaPic = useRef();
-
-	// const [links, linksIntersected] = useHasIntersected({ threshold: 0.5 });
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -52,48 +43,20 @@ export default function PersonalTraining() {
 			}
 		};
 
-		let loaded = 0;
 		const handleLoad = (event) => {
-			loaded++;
-			// console.log(loaded);
-			if (loaded === 8) {
-				// console.log('all 8 loaded');
-				setTimeout(() => {
-					window.removeEventListener('scroll', disableScroll);
-					window.addEventListener('scroll', handleScroll);
-					setLoaded(true);
-				}, '1000');
-			}
+			setTimeout(() => {
+				window.removeEventListener('scroll', disableScroll);
+				window.addEventListener('scroll', handleScroll);
+				setLoaded(true);
+			}, '500');
 		};
 
 		let picture1 = pic1.current;
-		let andrew = AndrewPic.current;
-		let cayley = CayleyPic.current;
-		let andrewH = AndrewHPic.current;
-		let joanna = JoannaPic.current;
-		let chet = ChetPic.current;
-		let vijay = VijayPic.current;
-		let ayaka = AyakaPic.current;
 		picture1.addEventListener('load', handleLoad);
-		andrew.addEventListener('load', handleLoad);
-		cayley.addEventListener('load', handleLoad);
-		andrewH.addEventListener('load', handleLoad);
-		joanna.addEventListener('load', handleLoad);
-		chet.addEventListener('load', handleLoad);
-		vijay.addEventListener('load', handleLoad);
-		ayaka.addEventListener('load', handleLoad);
-
 		window.addEventListener('scroll', disableScroll);
 
 		return () => {
 			picture1.removeEventListener('load', handleLoad);
-			andrew.removeEventListener('load', handleLoad);
-			cayley.removeEventListener('load', handleLoad);
-			andrewH.removeEventListener('load', handleLoad);
-			joanna.removeEventListener('load', handleLoad);
-			chet.removeEventListener('load', handleLoad);
-			vijay.removeEventListener('load', handleLoad);
-			ayaka.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
@@ -291,7 +254,6 @@ export default function PersonalTraining() {
 								<img
 									src={Andrew}
 									alt='Andrew'
-									ref={AndrewPic}
 									className={Style.Andrew}
 									onMouseEnter={() => setClient('Andrew')}
 								/>
@@ -300,7 +262,6 @@ export default function PersonalTraining() {
 								<img
 									src={Joanna}
 									alt='Joanna'
-									ref={JoannaPic}
 									className={Style.Joanna}
 									onMouseEnter={() => setClient('Joanna')}
 								/>
@@ -309,7 +270,6 @@ export default function PersonalTraining() {
 								<img
 									src={Ayaka}
 									alt='Ayaka'
-									ref={AyakaPic}
 									className={Style.Ayaka}
 									onMouseEnter={() => setClient('Ayaka')}
 								/>
@@ -318,7 +278,6 @@ export default function PersonalTraining() {
 								<img
 									src={Chet}
 									alt='Chet'
-									ref={ChetPic}
 									className={Style.Chet}
 									onMouseEnter={() => setClient('Chet')}
 								/>
@@ -327,7 +286,6 @@ export default function PersonalTraining() {
 								<img
 									src={Vijay}
 									alt='Vijay'
-									ref={VijayPic}
 									className={Style.Vijay}
 									onMouseEnter={() => setClient('Vijay')}
 								/>
@@ -336,7 +294,6 @@ export default function PersonalTraining() {
 								<img
 									src={Cayley}
 									alt='Cayley'
-									ref={CayleyPic}
 									className={Style.Cayley}
 									onMouseEnter={() => setClient('Cayley')}
 								/>
@@ -345,7 +302,6 @@ export default function PersonalTraining() {
 								<img
 									src={AndrewH}
 									alt='AndrewH'
-									ref={AndrewHPic}
 									className={Style.AndrewH}
 									onMouseEnter={() => setClient('AndrewH')}
 								/>

@@ -2,8 +2,8 @@
 
 .Contact {
 	width: 100vw;
-	height: 100vh;
-	position: absolute;
+	height: 100%;
+	position: fixed;
 	top: 0;
 	z-index: 1;
 	overflow-x: hidden;
@@ -15,6 +15,7 @@
 	}
 
 	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		position: absolute;
 		background-color: $color-contact;
 		height: fit-content;
 		min-height: 100vh;

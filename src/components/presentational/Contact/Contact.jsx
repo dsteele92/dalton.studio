@@ -7,16 +7,13 @@ import { RiLinkedinLine } from 'react-icons/ri';
 export default function Contact() {
 	const [top, setTop] = useState(true);
 	const [loaded, setLoaded] = useState(false);
-	// const [seeLinks, setSeeLinks] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 
-		// const handleLoad = (event) => {
 		setTimeout(() => {
 			setLoaded(true);
 		}, '1000');
-		// };
 
 		const handleScroll = (event) => {
 			// -----> state for transitioning out of top
@@ -25,20 +22,11 @@ export default function Contact() {
 			} else if (window.pageYOffset < 1) {
 				setTop(true);
 			}
-			// if (window.pageYOffset >= document.documentElement.scrollHeight - window.innerHeight - 300) {
-			// 	setSeeLinks(true);
-			// }
-			// if (window.pageYOffset < document.documentElement.scrollHeight - window.innerHeight - 600) {
-			// 	setSeeLinks(false);
-			// }
 		};
 
-		// let picture1 = pic1.current;
-		// picture1.addEventListener('load', handleLoad);
 		window.addEventListener('scroll', handleScroll);
 
 		return () => {
-			// picture1.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
