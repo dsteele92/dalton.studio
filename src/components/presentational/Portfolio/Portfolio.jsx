@@ -21,7 +21,6 @@ import {
 const goalsAppImg = require('../../../images/goals_app.png');
 const bookingImg = require('../../../images/direct_booking_screenshot.png');
 const findFirmImg = require('../../../images/find_firm.png');
-const lifeImprovementsImg = require('../../../images/life_improvements.png');
 const weeklyGoalsGif = require('../../../gifs/GoalsAppGif.gif');
 const findFirmGif = require('../../../gifs/FindFirmGif.gif');
 const bookingGif = require('../../../gifs/bookingGif.gif');
@@ -177,7 +176,6 @@ export default function Portfolio() {
 							<div className={Style.Description}>
 								<h4>Web Page</h4>
 								<h3>B&B Direct Booking Site</h3>
-								<p>(In progress)</p>
 							</div>
 							<img className={Style.Image} src={bookingImg} alt='direct booking site' ref={bookingPic} />
 							<img
