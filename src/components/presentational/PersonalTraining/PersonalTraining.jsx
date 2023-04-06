@@ -311,7 +311,7 @@ export default function PersonalTraining() {
 				</section>
 				<section className={top ? Style.ConsultationHide : Style.Consultation}>
 					<div className={Style.ConsultationText}>
-						I occasionaly accept new clients. If you are interested in training or would like to talk,
+						I occasionally accept new clients. If you are interested in training or would like to talk,
 						please leave your contact information and I will reach out to you.
 					</div>
 					<Link to='/contact'>

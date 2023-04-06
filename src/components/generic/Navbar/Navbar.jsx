@@ -43,8 +43,12 @@ export default function Navbar() {
 				<div className={menuClick ? Style.LeftMenuActive : Style.Left}></div>
 				<div className={menuClick ? Style.RightMenuActive : Style.Right}></div>
 			</div>
-			<header className={menuClick ? Style.HeaderMenuActive : Style.Header}>DALTON STEELE</header>
-			<header className={top ? Style.HeaderMobile : Style.HeaderMobileScroll}>DALTON STEELE</header>
+			<Link to='/'>
+				<header className={menuClick ? Style.HeaderMenuActive : Style.Header}>DALTON STEELE</header>
+			</Link>
+			<Link to='/'>
+				<header className={top ? Style.HeaderMobile : Style.HeaderMobileScroll}>DALTON STEELE</header>
+			</Link>
 			{location.pathname === '/' ? (
 				<div className={menuClick ? Style.RightNavMenuActive : Style.RightNav}>
 					<RightNav />

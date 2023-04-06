@@ -2,7 +2,7 @@ import { React, useState, useEffect, useRef } from 'react';
 import Style from './portfolio.module.scss';
 import { LinksLine, LoadingBounce, ScrollArrowSide } from 'components';
 
-import { SiMaterialui, SiExpress } from 'react-icons/si';
+import { SiMaterialui, SiExpress, SiFirebase } from 'react-icons/si';
 import { GrCloudComputer } from 'react-icons/gr';
 import { AiOutlineCloudServer } from 'react-icons/ai';
 import {
@@ -114,6 +114,53 @@ export default function Portfolio() {
 				</section>
 				<section className={Style.Projects}>
 					<div
+						className={Style.Booking}
+						onMouseEnter={() => setPlayGif4(true)}
+						onMouseLeave={() => setPlayGif4(false)}>
+						<a
+							className={Style.Anchor}
+							href='https://tabor-bnb.web.app/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<div className={Style.Description}>
+								<h4>Web Page</h4>
+								<h3>B&B Direct Booking Site</h3>
+							</div>
+							<img className={Style.Image} src={bookingImg} alt='direct booking site' ref={bookingPic} />
+							<img
+								className={playGif4 ? Style.GifPlay : Style.Gif}
+								src={bookingGif}
+								alt='booking site gif'
+							/>
+						</a>
+						<div className={Style.Info}>
+							<div className={Style.Icon}>
+								<SiFirebase />
+								<p>Firebase</p>
+							</div>
+							<div className={Style.Icon}>
+								<AiOutlineCloudServer />
+								<p>API</p>
+							</div>
+							<div className={Style.Icon}>
+								<SiExpress />
+								<p>Express</p>
+							</div>
+							<div className={Style.Icon}>
+								<DiReact />
+								<p>React.js</p>
+							</div>
+							<div className={Style.Icon}>
+								<DiSass />
+								<p>Sass</p>
+							</div>
+							<div className={Style.Icon}>
+								<DiHtml5 />
+								<p>HTML</p>
+							</div>
+						</div>
+					</div>
+					<div
 						className={Style.GoalsApp}
 						onMouseEnter={() => setPlayGif1(true)}
 						onMouseLeave={() => setPlayGif1(false)}>
@@ -161,49 +208,6 @@ export default function Portfolio() {
 							<div className={Style.Icon}>
 								<SiMaterialui />
 								<p>Material UI</p>
-							</div>
-						</div>
-					</div>
-					<div
-						className={Style.Booking}
-						onMouseEnter={() => setPlayGif4(true)}
-						onMouseLeave={() => setPlayGif4(false)}>
-						<a
-							className={Style.Anchor}
-							href='https://tabor-bnb.web.app/'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<div className={Style.Description}>
-								<h4>Web Page</h4>
-								<h3>B&B Direct Booking Site</h3>
-							</div>
-							<img className={Style.Image} src={bookingImg} alt='direct booking site' ref={bookingPic} />
-							<img
-								className={playGif4 ? Style.GifPlay : Style.Gif}
-								src={bookingGif}
-								alt='weather app gif'
-							/>
-						</a>
-						<div className={Style.Info}>
-							<div className={Style.Icon}>
-								<AiOutlineCloudServer />
-								<p>API</p>
-							</div>
-							<div className={Style.Icon}>
-								<SiExpress />
-								<p>Express</p>
-							</div>
-							<div className={Style.Icon}>
-								<DiReact />
-								<p>React.js</p>
-							</div>
-							<div className={Style.Icon}>
-								<DiSass />
-								<p>Sass</p>
-							</div>
-							<div className={Style.Icon}>
-								<DiHtml5 />
-								<p>HTML</p>
 							</div>
 						</div>
 					</div>

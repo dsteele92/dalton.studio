@@ -65,6 +65,8 @@
 }
 
 .Header {
+	color: black;
+	text-decoration: none;
 	position: fixed;
 	top: 15px;
 	left: $padding-horizontal;
@@ -77,6 +79,7 @@
 	opacity: 0;
 	animation: appear 1s ease-in 0.5s forwards;
 	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+	cursor: pointer;
 
 	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
 		display: none;
