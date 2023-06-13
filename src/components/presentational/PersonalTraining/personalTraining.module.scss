@@ -576,11 +576,11 @@
 								left: 25%;
 							}
 						}
-						&Joanna {
+						&Sara {
 							@extend .Client;
 							position: relative;
 							&::after {
-								content: 'Joanna';
+								content: 'Sara';
 							}
 							@media screen and (min-width: $breakpoint-tablet) and (min-height: $breakpoint-mobile-landscape) {
 								position: absolute;
@@ -597,7 +597,7 @@
 							@media screen and (min-width: $breakpoint-tablet) and (min-height: $breakpoint-mobile-landscape) {
 								position: absolute;
 								top: 600px;
-								left: 5%;
+								left: 0;
 							}
 						}
 						&Chet {
@@ -633,7 +633,19 @@
 							@media screen and (min-width: $breakpoint-tablet) and (min-height: $breakpoint-mobile-landscape) {
 								position: absolute;
 								top: 600px;
-								right: 5%;
+								right: 0;
+							}
+						}
+						&Joanna {
+							@extend .Client;
+							position: relative;
+							&::after {
+								content: 'Joanna';
+							}
+							@media screen and (min-width: $breakpoint-tablet) and (min-height: $breakpoint-mobile-landscape) {
+								position: absolute;
+								top: 725px;
+								left: 25%;
 							}
 						}
 						&AndrewH {
@@ -645,8 +657,7 @@
 							@media screen and (min-width: $breakpoint-tablet) and (min-height: $breakpoint-mobile-landscape) {
 								position: absolute;
 								top: 725px;
-								left: 50%;
-								transform: translateX(-50%);
+								right: 25%;
 							}
 						}
 					}

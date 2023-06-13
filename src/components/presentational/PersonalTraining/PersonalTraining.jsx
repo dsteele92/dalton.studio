@@ -13,6 +13,7 @@ import Chet from '../../../images/chet.png';
 import Joanna from '../../../images/joanna.png';
 import Vijay from '../../../images/Vijay.png';
 import Ayaka from '../../../images/ayaka.png';
+import Sara from '../../../images/sara.png';
 
 export default function PersonalTraining() {
 	const [top, setTop] = useState(true);
@@ -136,21 +137,23 @@ export default function PersonalTraining() {
 								<br />
 								With Dalton’s help, I’m living my dream. It’s a beautiful thing.
 							</p>
-							<p className={client === 'Joanna' ? Style.TextCurrent : Style.Text}>
-								You don't know what you're missing until you try it. I am not one to expect quick and
-								dirty results. I want consistent motivation and that’s what Dalton has done for me this
-								past year and a half. I started working out because I was always in pain in my right
-								shoulder and upper back from sitting and hunching over. My posture was terrible. At one
-								point, I could barely turn my neck to look back while changing lanes. I had trouble
-								sleeping because of constant neck pain. Ever since starting my training with Dalton, I
-								have not had any pain other than muscle soreness, the good kind. But the real kicker is
-								that I got pregnant with my son a few months in. I kept training until the week I
-								delivered. Throughout the entire 9 months, I had no back pain at all, no foot swelling,
-								and I gained the recommended 35 pounds total. At 8 weeks post partum and I had lost 30
-								of those pounds. People tell me that they can't even tell I was ever pregnant. I tell
-								everyone who is considering getting pregnant that working out is the best thing I have
-								done for myself. I tell everyone in general that training is the best investment I have
-								made for my health and my sanity.
+							<p className={client === 'Sara' ? Style.TextCurrent : Style.Text}>
+								For my whole life I struggled with fitness accountability – wasted gym memberships,
+								unwatched yoga videos, the works. I decided to reach out to Dalton when my husband and I
+								started thinking about having kids and I decided my health was too important to neglect.
+								Dalton listened to my goals focused on wellness and creating sustainable habits; he
+								taught me the fundamentals of healthy workout techniques and began reshaping my
+								relationship with the gym in general. Pretty quickly we were modifying our workout
+								routines to accommodate a rapidly changing body due to pregnancy. I can soundly say that
+								I was stronger and more fit during pregnancy than I had ever been in my life. I also
+								benefitted greatly from the daily meditation group which helped keep me grounded during
+								a time of constant change and anticipation! Dalton is patient and kind, validating and
+								encouraging. He cares about his clients’ growth regarding working out and helps me
+								celebrate my small wins (like not getting winded walking up the hill to my house) and
+								the major ones (like doing my first pull up!). More importantly, Dalton also has helped
+								my celebrate my life wins - like the birth of my son! Working with Dalton has been one
+								of the best things I have done for my physical and mental health. I recommend him with
+								the highest endorsement.
 							</p>
 							<p className={client === 'Ayaka' ? Style.TextCurrent : Style.Text}>
 								“I’ve known Dalton for over a year, and we have work out sessions twice or three times a
@@ -235,6 +238,22 @@ export default function PersonalTraining() {
 								self-confidence have improved tremendously! Dalton is incredibly knowledgeable, and I
 								always look forward to going to the gym with him. Oh, and I finally have a butt!
 							</p>
+							<p className={client === 'Joanna' ? Style.TextCurrent : Style.Text}>
+								You don't know what you're missing until you try it. I am not one to expect quick and
+								dirty results. I want consistent motivation and that’s what Dalton has done for me this
+								past year and a half. I started working out because I was always in pain in my right
+								shoulder and upper back from sitting and hunching over. My posture was terrible. At one
+								point, I could barely turn my neck to look back while changing lanes. I had trouble
+								sleeping because of constant neck pain. Ever since starting my training with Dalton, I
+								have not had any pain other than muscle soreness, the good kind. But the real kicker is
+								that I got pregnant with my son a few months in. I kept training until the week I
+								delivered. Throughout the entire 9 months, I had no back pain at all, no foot swelling,
+								and I gained the recommended 35 pounds total. At 8 weeks post partum and I had lost 30
+								of those pounds. People tell me that they can't even tell I was ever pregnant. I tell
+								everyone who is considering getting pregnant that working out is the best thing I have
+								done for myself. I tell everyone in general that training is the best investment I have
+								made for my health and my sanity.
+							</p>
 							<p className={client === 'AndrewH' ? Style.TextCurrent : Style.Text}>
 								I have been working with Steele Fitness for over 3 months now. Dalton has helped me
 								achieve my fitness goals through a varied set of strength, metabolic, and mobility
@@ -258,12 +277,12 @@ export default function PersonalTraining() {
 									onMouseEnter={() => setClient('Andrew')}
 								/>
 							</div>
-							<div className={Style.ClientJoanna}>
+							<div className={Style.ClientSara}>
 								<img
-									src={Joanna}
-									alt='Joanna'
-									className={Style.Joanna}
-									onMouseEnter={() => setClient('Joanna')}
+									src={Sara}
+									alt='Sara'
+									className={Style.Sara}
+									onMouseEnter={() => setClient('Sara')}
 								/>
 							</div>
 							<div className={Style.ClientAyaka}>
@@ -296,6 +315,14 @@ export default function PersonalTraining() {
 									alt='Cayley'
 									className={Style.Cayley}
 									onMouseEnter={() => setClient('Cayley')}
+								/>
+							</div>
+							<div className={Style.ClientJoanna}>
+								<img
+									src={Joanna}
+									alt='Joanna'
+									className={Style.Joanna}
+									onMouseEnter={() => setClient('Joanna')}
 								/>
 							</div>
 							<div className={Style.ClientAndrewH}>
