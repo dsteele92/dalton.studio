@@ -143,17 +143,20 @@ export default function PersonalTraining() {
 								started thinking about having kids and I decided my health was too important to neglect.
 								Dalton listened to my goals focused on wellness and creating sustainable habits; he
 								taught me the fundamentals of healthy workout techniques and began reshaping my
-								relationship with the gym in general. Pretty quickly we were modifying our workout
-								routines to accommodate a rapidly changing body due to pregnancy. I can soundly say that
-								I was stronger and more fit during pregnancy than I had ever been in my life. I also
-								benefitted greatly from the daily meditation group which helped keep me grounded during
-								a time of constant change and anticipation! Dalton is patient and kind, validating and
-								encouraging. He cares about his clients’ growth regarding working out and helps me
-								celebrate my small wins (like not getting winded walking up the hill to my house) and
-								the major ones (like doing my first pull up!). More importantly, Dalton also has helped
-								my celebrate my life wins - like the birth of my son! Working with Dalton has been one
-								of the best things I have done for my physical and mental health. I recommend him with
-								the highest endorsement.
+								relationship with the gym in general.
+								<br />
+								Pretty quickly we were modifying our workout routines to accommodate a rapidly changing
+								body due to pregnancy. I can soundly say that I was stronger and more fit during
+								pregnancy than I had ever been in my life. I also benefitted greatly from the daily
+								meditation group which helped keep me grounded during a time of constant change and
+								anticipation!
+								<br />
+								Dalton is patient and kind, validating and encouraging. He cares about his clients’
+								growth regarding working out and helps me celebrate my small wins (like not getting
+								winded walking up the hill to my house) and the major ones (like doing my first pull
+								up!). More importantly, Dalton also has helped my celebrate my life wins - like the
+								birth of my son! Working with Dalton has been one of the best things I have done for my
+								physical and mental health. I recommend him with the highest endorsement.
 							</p>
 							<p className={client === 'Ayaka' ? Style.TextCurrent : Style.Text}>
 								“I’ve known Dalton for over a year, and we have work out sessions twice or three times a
