@@ -154,7 +154,7 @@ export default function PersonalTraining() {
 								Dalton is patient and kind, validating and encouraging. He cares about his clients’
 								growth regarding working out and helps me celebrate my small wins (like not getting
 								winded walking up the hill to my house) and the major ones (like doing my first pull
-								up!). More importantly, Dalton also has helped my celebrate my life wins - like the
+								up!). More importantly, Dalton also has helped me celebrate my life wins - like the
 								birth of my son! Working with Dalton has been one of the best things I have done for my
 								physical and mental health. I recommend him with the highest endorsement.
 							</p>
