@@ -98,7 +98,7 @@ export default function About() {
 						<li>
 							<h3>Software Engineer</h3>
 							<h4>
-								The Find Firm, LLC <span>2022-Present</span>
+								The Find Firm & Freelance <span>2022-Present</span>
 							</h4>
 						</li>
 						<li>
