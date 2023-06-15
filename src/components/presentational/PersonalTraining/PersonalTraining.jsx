@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Style from './personalTraining.module.scss';
@@ -21,8 +21,6 @@ export default function PersonalTraining() {
 	const [client, setClient] = useState('');
 	const [seeLinks, setSeeLinks] = useState(false);
 
-	const pic1 = useRef();
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 
@@ -44,20 +42,15 @@ export default function PersonalTraining() {
 			}
 		};
 
-		const handleLoad = (event) => {
-			setTimeout(() => {
-				window.removeEventListener('scroll', disableScroll);
-				window.addEventListener('scroll', handleScroll);
-				setLoaded(true);
-			}, '500');
-		};
-
-		let picture1 = pic1.current;
-		picture1.addEventListener('load', handleLoad);
 		window.addEventListener('scroll', disableScroll);
 
+		setTimeout(() => {
+			window.removeEventListener('scroll', disableScroll);
+			window.addEventListener('scroll', handleScroll);
+			setLoaded(true);
+		}, '1000');
+
 		return () => {
-			picture1.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
@@ -92,7 +85,7 @@ export default function PersonalTraining() {
 				</section>
 
 				<div className={top ? Style.Running : Style.RunningScroll}>
-					<img src={RunningPic} alt='running' ref={pic1} />
+					<img src={RunningPic} alt='running' />
 				</div>
 
 				<section className={top ? Style.TestimonialsHide : Style.Testimonials}>

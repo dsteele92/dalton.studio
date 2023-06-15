@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import Style from './portfolio.module.scss';
 import { LinksLine, LoadingBounce, ScrollArrowSide } from 'components';
 
@@ -37,11 +37,6 @@ export default function Portfolio() {
 	const [playGif3, setPlayGif3] = useState(false);
 	const [playGif4, setPlayGif4] = useState(false);
 
-	const goalsAppPic = useRef();
-	const bookingPic = useRef();
-	const findFirmPic = useRef();
-	const triviaGamePic = useRef();
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 
@@ -64,13 +59,13 @@ export default function Portfolio() {
 			}
 		};
 
+		window.addEventListener('scroll', disableScroll);
+
 		setTimeout(() => {
 			window.removeEventListener('scroll', disableScroll);
 			window.addEventListener('scroll', handleScroll);
 			setLoaded(true);
 		}, '1000');
-
-		window.addEventListener('scroll', disableScroll);
 
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -126,7 +121,7 @@ export default function Portfolio() {
 								<h4>Web Page</h4>
 								<h3>B&B Direct Booking Site</h3>
 							</div>
-							<img className={Style.Image} src={bookingImg} alt='direct booking site' ref={bookingPic} />
+							<img className={Style.Image} src={bookingImg} alt='direct booking site' />
 							<img
 								className={playGif4 ? Style.GifPlay : Style.Gif}
 								src={bookingGif}
@@ -173,7 +168,7 @@ export default function Portfolio() {
 								<h4>Web App</h4>
 								<h3>Weekly Goal Scheduler</h3>
 							</div>
-							<img className={Style.Image} src={goalsAppImg} alt='weekly goals app' ref={goalsAppPic} />
+							<img className={Style.Image} src={goalsAppImg} alt='weekly goals app' />
 							<img
 								className={playGif1 ? Style.GifPlay : Style.Gif}
 								src={weeklyGoalsGif}
@@ -224,7 +219,7 @@ export default function Portfolio() {
 								<h4>Web App</h4>
 								<h3>Trivia Game</h3>
 							</div>
-							<img className={Style.Image} src={triviaImg} alt='trivia game' ref={triviaGamePic} />
+							<img className={Style.Image} src={triviaImg} alt='trivia game' />
 							<img
 								className={playGif3 ? Style.GifPlay : Style.Gif}
 								src={triviaGif}
@@ -263,7 +258,7 @@ export default function Portfolio() {
 								<h4>Web Page</h4>
 								<h3>The Find Firm, LLC</h3>
 							</div>
-							<img className={Style.Image} src={findFirmImg} alt='the find firm' ref={findFirmPic} />
+							<img className={Style.Image} src={findFirmImg} alt='the find firm' />
 							<img
 								className={playGif2 ? Style.GifPlay : Style.Gif}
 								src={findFirmGif}

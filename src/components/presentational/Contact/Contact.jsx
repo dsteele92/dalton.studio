@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import Style from './contact.module.scss';
 import { LoadingBounce, Form } from 'components';
 import { AiOutlineMail } from 'react-icons/ai';

@@ -11,8 +11,6 @@ export default function About() {
 	const [top, setTop] = useState(true);
 	const [loaded, setLoaded] = useState(false);
 
-	const aboutMePic = useRef();
-
 	const [CV, CVIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	useEffect(() => {
@@ -31,20 +29,15 @@ export default function About() {
 			}
 		};
 
-		const handleLoad = (event) => {
-			setTimeout(() => {
-				window.removeEventListener('scroll', disableScroll);
-				window.addEventListener('scroll', handleScroll);
-				setLoaded(true);
-			}, '500');
-		};
-
-		let picture = aboutMePic.current;
-		picture.addEventListener('load', handleLoad);
 		window.addEventListener('scroll', disableScroll);
 
+		setTimeout(() => {
+			window.removeEventListener('scroll', disableScroll);
+			window.addEventListener('scroll', handleScroll);
+			setLoaded(true);
+		}, '1000');
+
 		return () => {
-			picture.removeEventListener('load', handleLoad);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
@@ -81,7 +74,7 @@ export default function About() {
 				</section>
 
 				<div className={top ? Style.PhotoDiv : Style.PhotoDivScroll}>
-					<img src={AboutMePic} alt='Dalton' ref={aboutMePic} />
+					<img src={AboutMePic} alt='Dalton' />
 				</div>
 
 				<section className={top ? Style.CV : Style.CVScroll} ref={CV}>
