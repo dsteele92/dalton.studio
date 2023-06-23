@@ -1,5 +1,5 @@
-export { default as HomePage } from './home.jsx';
-export { default as AboutPage } from './about.jsx';
-export { default as PortfolioPage } from './portfolio.jsx';
-export { default as FitnessPage } from './fitness.jsx';
-export { default as ContactPage } from './contact.jsx';
+export { default as Home } from './Home/Home.jsx';
+export { default as About } from './About/About.jsx';
+export { default as Portfolio } from './Portfolio/Portfolio.jsx';
+export { default as Fitness } from './PersonalTraining/PersonalTraining.jsx';
+export { default as Contact } from './Contact/Contact.jsx';

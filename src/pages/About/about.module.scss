@@ -1,0 +1,458 @@
+@import 'sass';
+
+.AboutPage {
+	width: 100vw;
+	height: 120vh;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	overflow-x: hidden;
+
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+		background-color: $color-about;
+		height: fit-content;
+		min-height: 100vh;
+	}
+
+	.Right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -9;
+		background-color: $color-right;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+			display: none;
+		}
+	}
+	.Left {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $color-about;
+		z-index: -8;
+		@include flex-center;
+
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+			display: none;
+		}
+
+		&Loading {
+			@extend .Left;
+		}
+
+		&Top {
+			@extend .Left;
+			@media screen and (min-width: $breakpoint-tablet) {
+				animation: leftSlideIn 1.5s cubic-bezier(0.075, 0.4, 0.165, 1) 0s 1 normal forwards;
+			}
+		}
+
+		&Scroll {
+			@extend .Left;
+			@media screen and (min-width: $breakpoint-tablet) {
+				animation: leftExpand 1s cubic-bezier(0.3, 0.05, 0.5, 0.95) 0s 1 normal forwards;
+			}
+		}
+	}
+	.LoadingPage {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		@include flex-center;
+		opacity: 1;
+		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+		&Hide {
+			@extend .LoadingPage;
+			animation: fadeThenLeave 0.5s ease forwards;
+			@keyframes fadeThenLeave {
+				0% {
+					opacity: 1;
+					transform: translateX(0);
+				}
+				99% {
+					opacity: 0;
+					transform: translateX(0);
+				}
+				100% {
+					opacity: 0;
+					transform: translateX(-100vw);
+				}
+			}
+		}
+	}
+
+	.Main {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		opacity: 0;
+		animation: fadeInLift 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+			width: 100%;
+			height: fit-content;
+			position: relative;
+			padding-top: 7vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		&Loading {
+			@extend .Main;
+			display: none;
+		}
+
+		.AboutMe {
+			position: fixed;
+			top: 10vh;
+			right: 57%;
+			height: 80vh;
+			width: 31%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			backface-visibility: hidden;
+
+			&Loading {
+				@extend .AboutMe;
+				display: none;
+			}
+
+			&Scroll {
+				@extend .AboutMe;
+				transform: rotateY(180deg);
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					transform: none;
+				}
+			}
+
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+				position: relative;
+				height: fit-content;
+				justify-content: flex-start;
+				width: 100%;
+				top: 0;
+				right: 0;
+				padding: 10%;
+			}
+
+			.Title {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 100px;
+				font-weight: normal;
+				font-family: 'Aboreto';
+				color: $color-headers;
+				// opacity: 0;
+				// animation: fadeInLift 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+				margin-bottom: 50px;
+				@media screen and (max-height: $breakpoint-tablet) {
+					margin-bottom: 20px;
+				}
+				@media screen and (max-height: $breakpoint-mobile) {
+					margin-bottom: 10px;
+				}
+
+				.WDIcon {
+					fill: none;
+					stroke: black;
+					stroke-width: 4;
+					stroke-dasharray: 300;
+					stroke-dashoffset: 300;
+					transform: scale(0.5);
+					// transition: all 1.5s ease 0.5s;
+
+					@keyframes dashoffset {
+						from {
+							stroke-dashoffset: 300;
+						}
+						to {
+							stroke-dashoffset: 0;
+						}
+					}
+
+					animation: dashoffset 1.5s ease 0.5s forwards;
+				}
+
+				.Header {
+					font-family: 'Aboreto';
+
+					@media screen and (max-width: $breakpoint-large) {
+						font-size: 90px;
+					}
+					@media screen and (max-width: $breakpoint-medium) {
+						font-size: 80px;
+					}
+					@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+						font-size: 70px;
+					}
+					@media screen and (max-width: $breakpoint-mobile) {
+						font-size: 60px;
+					}
+					@media screen and (max-height: $breakpoint-tablet) {
+						font-size: 60px;
+					}
+					@media screen and (max-height: $breakpoint-mobile) {
+						font-size: 50px;
+					}
+				}
+			}
+
+			h2 {
+				font-size: 30px;
+				font-weight: 100;
+				margin-bottom: 30px;
+				color: $color-alternate;
+				@media screen and (max-width: $breakpoint-large) {
+					font-size: 28px;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					font-size: 26px;
+				}
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					font-size: 24px;
+					color: $color-alternate;
+				}
+				@media screen and (max-width: $breakpoint-mobile) {
+					font-size: 22px;
+				}
+				@media screen and (max-height: $breakpoint-tablet) {
+					font-size: 22px;
+					margin-bottom: 10px;
+				}
+				@media screen and (max-height: $breakpoint-mobile) {
+					font-size: 20px;
+					margin-bottom: 5px;
+				}
+			}
+			p {
+				font-size: 22px;
+				font-weight: 300;
+				letter-spacing: 1pt;
+				margin-bottom: 20px;
+				color: #c9c9c9;
+				@media screen and (max-width: $breakpoint-large) {
+					font-size: 22px;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					font-size: 20px;
+				}
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					font-size: 18px;
+					color: $color-alternate;
+				}
+				@media screen and (max-width: $breakpoint-mobile) {
+					font-size: 14px;
+				}
+				@media screen and (max-height: $breakpoint-tablet) {
+					font-size: 16px;
+					margin-bottom: 5px;
+				}
+				@media screen and (max-height: $breakpoint-mobile) {
+					font-size: 12px;
+					margin-bottom: 0px;
+				}
+			}
+		}
+
+		.PhotoDiv {
+			position: fixed;
+			top: 0;
+			left: 58%;
+			height: 100vh;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			transition: all 1s ease;
+			opacity: 0;
+			animation: appear 1s ease 0.5s forwards;
+
+			@media screen and (max-width: $breakpoint-large) {
+				left: 55%;
+			}
+			@media screen and (max-width: $breakpoint-medium) {
+				left: 58%;
+			}
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+				position: relative;
+				height: fit-content;
+				width: 100%;
+				left: 0;
+				justify-content: center;
+			}
+
+			img {
+				height: 70%;
+				border-radius: 20px;
+				box-shadow: 0 10px 20px 5px rgba(128, 128, 128, 0.8);
+				@media screen and (max-width: $breakpoint-medium) {
+					height: 50%;
+				}
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					width: 70%;
+					max-width: 300px;
+					height: auto;
+				}
+				@media screen and (max-height: $breakpoint-mobile) {
+					height: 70%;
+					width: auto;
+				}
+			}
+
+			&Scroll {
+				@extend .PhotoDiv;
+				transform: translateX(50vw);
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					transform: none;
+				}
+			}
+		}
+
+		.CV {
+			@extend .AboutMe;
+			align-items: center;
+			transform: rotateY(180deg);
+			backface-visibility: hidden;
+			transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+			text-align: left;
+			color: $color-alternate;
+
+			.CVIcon {
+				fill: none;
+				stroke: #c9c9c9;
+				stroke-width: 4;
+				stroke-dasharray: 300;
+				stroke-dashoffset: 300;
+				transform: scale(0.5);
+				// transition: all 1.5s ease 0.5s;
+
+				@keyframes dashoffset {
+					from {
+						stroke-dashoffset: 300;
+					}
+					to {
+						stroke-dashoffset: 0;
+					}
+				}
+				animation: none;
+
+				&Intersected {
+					@extend .CVIcon;
+					@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+						animation: dashoffset 1.5s ease 0.5s forwards;
+					}
+				}
+			}
+
+			h2 {
+				text-align: center;
+				font-weight: 300;
+				color: black;
+				font-family: 'Aboreto';
+				margin-bottom: 10px;
+			}
+			h3 {
+				font-weight: 300;
+				margin-bottom: 3px;
+			}
+			h4 {
+				font-weight: 100;
+			}
+			span {
+				float: right;
+			}
+			ul {
+				margin-bottom: 10px;
+				font-weight: 300;
+				list-style: none;
+				width: 100%;
+				li {
+					width: 100%;
+					margin: 10px 0;
+				}
+			}
+			.LinkedIn {
+				margin-top: 20px;
+				text-align: center;
+				font-size: 20px;
+				h3 {
+					font-size: 18px;
+				}
+				a {
+					color: $color-alternate;
+					text-decoration: none;
+				}
+			}
+
+			&Scroll {
+				@extend .CV;
+				transform: rotateY(0deg);
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					transform: rotateY(180deg);
+				}
+
+				.CVIcon {
+					animation: dashoffset 1.5s ease 0.5s forwards;
+				}
+			}
+
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+				transform: none;
+				margin: 20px 0;
+				// box-shadow: inset 0 0 5px #ffffff;
+			}
+		}
+
+		.Links {
+			position: fixed;
+			top: 0;
+			right: 5%;
+			height: 100%;
+			width: 45%;
+			@include flex-center;
+			flex-direction: column;
+			transition: all 0.2s ease;
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+				background-color: $color-about;
+				position: relative;
+				width: 100%;
+				right: 0;
+				height: auto;
+				&::before {
+					content: '';
+					height: 50px;
+				}
+				&::after {
+					content: '';
+					height: 50px;
+				}
+			}
+			&Hide {
+				@extend .Links;
+				display: none;
+				@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+					display: flex;
+				}
+			}
+		}
+
+		.ScrollArrow {
+			@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
+				display: none;
+			}
+		}
+	}
+}

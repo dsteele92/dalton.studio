@@ -1,0 +1,50 @@
+@import 'sass';
+
+.Scroll {
+	position: fixed;
+	bottom: 10%;
+	left: 10%;
+	color: black;
+	z-index: 10;
+	@include flex-center;
+	flex-direction: column;
+	transition: all 1s ease 0.5s;
+	opacity: 1;
+
+	@media screen and (max-width: $breakpoint-tablet) {
+		left: 40%;
+	}
+	@media screen and (max-height: 500px) {
+		bottom: 10%;
+		left: 5%;
+	}
+
+	p {
+		transform: rotate(-90deg);
+		font-weight: 300;
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	.Arrow {
+		@keyframes bounce {
+			from {
+				transform: translateY(0);
+			}
+			60% {
+				transform: translateY(15px);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+		animation: bounce 1.5s infinite;
+		margin-bottom: 30px;
+	}
+
+	&Hide {
+		@extend .Scroll;
+		opacity: 0;
+		transition: all 0.5s ease;
+	}
+}

@@ -1,0 +1,220 @@
+@import 'sass';
+
+button {
+	height: 60px;
+	width: 250px;
+	border: 1px solid black;
+	padding: 5px 2% 3px;
+	overflow: hidden;
+	white-space: wrap;
+	background-color: white;
+	cursor: pointer;
+	position: relative;
+	@include flex-center;
+	transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+	.Text {
+		width: 158px;
+		height: 100%;
+		position: relative;
+		font-size: 20px;
+		color: black;
+		// letter-spacing: 1pt;
+		// font-weight: 500;
+		// color: #3a5474;
+
+		.letter0 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 0;
+			top: 10px;
+		}
+		.letter1 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 18px;
+			top: 10px;
+		}
+		.letter2 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 30px;
+			top: 10px;
+		}
+		.letter3 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 40px;
+			top: 10px;
+		}
+		.letter4 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 50px;
+			top: 10px;
+		}
+		.letter5 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 58px;
+			top: 10px;
+		}
+		.letter6 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 65px;
+			top: 10px;
+		}
+		.letter7 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 80px;
+			top: 10px;
+		}
+		.letter8 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 93px;
+			top: 10px;
+		}
+		.letter9 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 111px;
+			top: 10px;
+		}
+		.letter10 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 128px;
+			top: 10px;
+		}
+		.letter11 {
+			font-family: 'Aboreto';
+			position: absolute;
+			left: 144px;
+			top: 10px;
+		}
+
+		@keyframes lift {
+			0% {
+				transform: translateY(0);
+				color: black;
+			}
+			50% {
+				transform: translateY(-10px);
+			}
+			100% {
+				transform: translateY(0);
+				color: white;
+			}
+		}
+	}
+	&:hover {
+		background-color: #9c9c9c;
+		background-color: $color-contact;
+		.Text {
+			.letter0 {
+				animation: lift 0.2s linear forwards;
+			}
+			.letter1 {
+				animation: lift 0.2s linear 0.025s forwards;
+			}
+			.letter2 {
+				animation: lift 0.2s linear 0.05s forwards;
+			}
+
+			.letter4 {
+				animation: lift 0.2s linear 0.075s forwards;
+			}
+			.letter5 {
+				animation: lift 0.2s linear 0.1s forwards;
+			}
+
+			.letter7 {
+				animation: lift 0.2s linear 0.125s forwards;
+			}
+			.letter8 {
+				animation: lift 0.2s linear 0.15s forwards;
+			}
+			.letter9 {
+				animation: lift 0.2s linear 0.175s forwards;
+			}
+			.letter10 {
+				animation: lift 0.2s linear 0.2s forwards;
+			}
+			.letter11 {
+				animation: lift 0.2s linear 0.225s forwards;
+			}
+		}
+	}
+}
+
+// .Container {
+// 	width: 300px;
+// 	height: 80px;
+// 	border: 2px solid black;
+// 	margin: 10px auto 10px;
+// 	z-index: 1;
+// 	position: relative;
+
+// 	@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-medium) {
+// 		width: 250px;
+// 		height: 80px;
+// 	}
+// 	@media screen and (max-width: $breakpoint-tablet) {
+// 		width: 200px;
+// 		height: 60px;
+// 	}
+// 	@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-tablet) {
+// 		width: 150px;
+// 		height: 60px;
+// 	}
+
+// 	.Inner {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		z-index: 0;
+
+// 		color: black;
+// 		font-size: 30px;
+// 		font-weight: 200;
+// 		text-transform: uppercase;
+// 		letter-spacing: 1px;
+// 		white-space: nowrap;
+// 		padding: 6% 12%;
+
+// 		@media screen and (max-width: $breakpoint-medium) {
+// 			font-size: 25px;
+// 		}
+// 		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+// 			font-size: 20px;
+// 		}
+// 		@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-mobile) {
+// 			font-size: 20px;
+// 		}
+
+// 		&::after {
+// 			content: '';
+// 			position: absolute;
+// 			width: 100%;
+// 			height: 100%;
+// 			z-index: -1;
+
+// 			background-color: rgba($color: $color-buttons, $alpha: 1);
+// 			top: 7px;
+// 			left: 7px;
+// 			transition: 0.2s;
+// 		}
+
+// 		&:hover::after {
+// 			top: 0px;
+// 			left: 0px;
+// 		}
+// 		&:active::after {
+// 			top: 0px;
+// 			left: 0px;
+// 		}
+// 	}
+// }

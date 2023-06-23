@@ -1,0 +1,118 @@
+@import 'sass';
+
+.LinksGrid {
+	height: 500px;
+	width: 500px;
+	@media screen and (max-width: $breakpoint-desktop) {
+		height: 400px;
+		width: 400px;
+	}
+	@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-tablet) {
+		height: 300px;
+		width: 300px;
+	}
+	// border: 1px solid black;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	// background-color: rgba($color: white, $alpha: 1);
+	align-items: end;
+	justify-items: end;
+	overflow: hidden;
+
+	div {
+		overflow: hidden;
+		width: 100%;
+		position: relative;
+		height: 100%;
+		vertical-align: bottom;
+		opacity: 0;
+		// border: 1px solid black;
+
+		.Icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 350px;
+			color: #dddddd;
+			// color: white;
+			opacity: 0.7;
+			transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+			@media screen and (max-width: $breakpoint-desktop) {
+				font-size: 300px;
+			}
+			@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-tablet) {
+				font-size: 250px;
+			}
+		}
+		h2 {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			vertical-align: bottom;
+			// font-family: 'Roboto';
+			font-family: 'Aboreto';
+			text-align: right;
+			font-size: 45px;
+			color: black;
+			// opacity: 0.8;
+			color: white;
+			font-weight: 700;
+			transform: translate(0px, 9px);
+			transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			@media screen and (max-width: $breakpoint-desktop) {
+				font-size: 35px;
+				transform: translate(0px, 7px);
+			}
+			@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-tablet) {
+				font-size: 28px;
+				transform: translate(0px, 6px);
+			}
+		}
+
+		&:hover {
+			.Icon {
+				font-size: 280px;
+				@media screen and (max-width: $breakpoint-desktop) {
+					font-size: 230px;
+				}
+				@media screen and (max-width: $breakpoint-medium), (max-height: $breakpoint-tablet) {
+					font-size: 180px;
+				}
+			}
+			h2 {
+				transform: translate(-5px, -5px);
+			}
+		}
+	}
+
+	.Hide {
+		display: none;
+	}
+	.About {
+		animation: fadeInLift 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.3s;
+		// color: $color-about;
+		// background-color: $color-about;
+	}
+	.Coding {
+		animation: fadeInLift 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.4s;
+		// color: $color-coding;
+		// background-color: $color-coding;
+	}
+	.Fitness {
+		animation: fadeInLift 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.5s;
+		// color: $color-fitness;
+		// background-color: $color-fitness;
+	}
+	.Contact {
+		animation: fadeInLift 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.6s;
+		// color: $color-contact;
+		// background-color: $color-contact;
+	}
+	.Home {
+		animation: fadeInLift 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.7s;
+		// color: $color-background-main;
+		// background-color: $color-background-main;
+	}
+}
