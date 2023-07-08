@@ -20,7 +20,7 @@ export default function Navbar() {
 
 	useEffect(() => {
 		const handleScroll = (event) => {
-			console.log(window.pageYOffset);
+			// console.log(window.pageYOffset);
 			if (window.pageYOffset >= 30) {
 				setTop(false);
 			} else if (window.pageYOffset < 30) {

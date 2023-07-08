@@ -1,7 +1,7 @@
 @import 'sass';
 
 .FitnessPage {
-	width: 100vw;
+	width: 100%;
 	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-mobile-landscape) {
 		height: fit-content;
 	}

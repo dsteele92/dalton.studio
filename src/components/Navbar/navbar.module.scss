@@ -14,7 +14,7 @@
 		height: $padding-vertical;
 		position: fixed;
 		top: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		animation: slideDown 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
 		&MenuActive {
@@ -27,7 +27,7 @@
 		height: $padding-vertical;
 		position: fixed;
 		bottom: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		animation: slideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
 		&MenuActive {
@@ -40,7 +40,7 @@
 		height: 100vh;
 		position: fixed;
 		left: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		animation: slideRight 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
 		&MenuActive {
@@ -53,7 +53,7 @@
 		height: 100vh;
 		position: fixed;
 		right: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		animation: slideLeft 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 normal forwards;
 		&MenuActive {
@@ -432,7 +432,7 @@
 
 	height: 40px;
 	width: 40px;
-	background-color: white;
+	background-color: $color-navbar;
 	z-index: 200;
 	@include flex-center;
 	font-size: 25px;
@@ -503,7 +503,7 @@
 		height: 2%;
 		position: fixed;
 		top: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		transform: translateY(-105%);
 		&Active {
@@ -516,7 +516,7 @@
 		height: 5%;
 		position: fixed;
 		bottom: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		transform: translateY(105%);
 		&Active {
@@ -544,7 +544,7 @@
 		height: 100vh;
 		position: fixed;
 		left: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		transform: translateX(-105%);
 		&Active {
@@ -562,7 +562,7 @@
 		height: 100vh;
 		position: fixed;
 		right: 0;
-		background: white;
+		background: $color-navbar;
 		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 		transform: translateX(105%);
 		&Active {
