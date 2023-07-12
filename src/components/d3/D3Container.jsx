@@ -58,7 +58,16 @@ export default function D3Container(props) {
 				)}
 			</div>
 			<div className={Style.GitHub}>
-				<a href='https://github.com/dsteele92' target='_blank' rel='noopener noreferrer'>
+				<a
+					href={
+						props.project === 1
+							? 'https://github.com/dsteele92/dalton.studio/blob/main/src/components/d3/BarChartRace.jsx'
+							: props.project === 2
+							? 'https://github.com/dsteele92/dalton.studio/blob/main/src/components/d3/DinoTree.jsx'
+							: 'https://github.com/dsteele92/dalton.studio/blob/main/src/components/d3/Sunburst.jsx'
+					}
+					target='_blank'
+					rel='noopener noreferrer'>
 					<h3>View code on GitHub </h3>
 					<span>
 						<DiGithubBadge />

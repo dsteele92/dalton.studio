@@ -39,8 +39,6 @@ function DinosaurTree() {
 		}
 	};
 
-	// Compute the tree height; this approach will allow the height of the
-	// SVG to scale according to the breadth (width) of the tree layout.
 	const root = hierarchy(dinoData);
 	// console.log(root);
 	const dx = 10;
@@ -143,12 +141,9 @@ function DinosaurTree() {
 			.attr('transform', (d) => `translate(${d.y},${d.x})`)
 			.attr('id', (d) => (d.data.index ? `node-${d.data.index}` : 'branch'));
 
-		// node.append('circle').attr('fill', '#555').attr('r', 1.5);
-
 		node.append('text')
 			.attr('dy', '0.31em')
 			.attr('x', (d) => (d.children ? -6 : 6))
-			// .attr('text-anchor', (d) => (d.children ? 'end' : 'start'))
 			.attr('text-anchor', 'start')
 			.attr('class', (d) => `node-label nodes-${d.data.era} nodes-${d.data.subEra}`)
 			.attr('id', (d) => {
@@ -341,7 +336,6 @@ function DinosaurTree() {
 					((-startX + (d.start + d.end) / 2) / (endX - startX)) *
 					(width - beginTimeline - margin.left - margin.right)
 			)
-			// .attr('dx', '-1.35em')
 			.attr('y', 22)
 			.text((d) => d.name)
 			.attr('text-anchor', 'middle')
@@ -456,7 +450,6 @@ function DinosaurTree() {
 			if (yIndex >= 0 && yIndex < index) {
 				// console.log(yIndex);
 				select(`#node-label-${yIndex}`).attr('font-weight', '600');
-				// .attr('font-weight', '100');
 				const currentNode = root.descendants().filter((d) => d.data.index === yIndex);
 				// console.log(currentNode);
 				const ancestors = currentNode[0].ancestors();

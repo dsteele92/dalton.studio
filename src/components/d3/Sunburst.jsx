@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { select, selectAll, pointer } from 'd3-selection';
-import { hierarchy, tree, partition, eachAfter, eachBefore } from 'd3-hierarchy';
+import { select } from 'd3-selection';
+import { hierarchy, partition } from 'd3-hierarchy';
 import { scaleOrdinal } from 'd3-scale';
-import { axisBottom } from 'd3-axis';
 import { tsvParse, autoType } from 'd3-dsv';
 import { group } from 'd3-array';
 import { arc } from 'd3-shape';
 import { interpolate, quantize } from 'd3-interpolate';
 import { format } from 'd3-format';
-import { transition } from 'd3-transition';
 import { interpolateSpectral } from 'd3-scale-chromatic';
-import { sum, sort } from 'd3-array';
 
 import tsvData from '../../assets/data/countriesData.js';
 
@@ -191,28 +188,20 @@ function Sunburst() {
 			.style('cursor', 'pointer')
 			.on('click', clicked);
 
-		// path.append('title').text(
-		// 	(d) => `${d.data.name}\n${sortBy}: ${format(d.value)}${sortBy === 'Area' ? ' sq km' : ''}`
-		// );
-
 		path.on('mouseover', function (event, d) {
 			if (d.data.name === 'cont...') return;
 			select(this).attr('opacity', 0.9); // Reduce opacity on mouseover
-			// console.log(d);
-			// console.log(d.data);
 			tooltip
 				.style('visibility', 'visible') // Show tooltip on mouseover
 				.style('left', `${event.pageX}px`) // Position tooltip relative to mouse cursor
 				.style('top', `${event.pageY + 18}px`)
 				.append('h4')
 				.text(`${d.data.name}`)
-				// .style('font-weight', 'bold')
 				.append('h4')
 				.text(`${sortBy}: ${d3format(d.value)}${sortBy === 'Area' ? ' sq km' : ''}`);
 		})
 			.on('mousemove', function (event, d) {
 				if (d.data.name === 'cont...') return;
-				// select(this).attr('opacity', 1); // Restore opacity on mouseout
 				tooltip
 					.style('left', `${event.pageX}px`) // Position tooltip relative to mouse cursor
 					.style('top', `${event.pageY + 18}px`);
