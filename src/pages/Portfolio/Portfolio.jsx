@@ -1,14 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react';
 import Style from './portfolio.module.scss';
-import {
-	LinksLine,
-	LoadingBounce,
-	ScrollArrowSide,
-	useHasIntersected,
-	DinoTree,
-	BarChartRace,
-	Sunburst,
-} from 'components';
+import { LinksLine, LoadingBounce, ScrollArrowSide, useHasIntersected, D3Container } from 'components';
 
 import { SiMaterialui, SiExpress, SiFirebase, SiD3Dotjs } from 'react-icons/si';
 import { GrCloudComputer } from 'react-icons/gr';
@@ -41,7 +33,6 @@ export default function Portfolio() {
 
 	const [openDataVis, setOpenDataVis] = useState(0);
 
-	const [dataVisTitle, dataVisTitleIntersected] = useHasIntersected({ threshold: 0.5 });
 	const [webDevTitle, webDevTitleIntersected] = useHasIntersected({ threshold: 0.5 });
 
 	useEffect(() => {
@@ -87,6 +78,7 @@ export default function Portfolio() {
 			</div>
 			{/* {loaded && <ScrollArrowSide />} */}
 			<main className={loaded ? Style.Main : Style.MainLoading}>
+				{/* style={openDataVis ? { overflowY: 'hidden' } : { overflowY: 'auto' }}> */}
 				<section className={Style.Work}>
 					<div className={Style.Title}>
 						<svg height='20' width='120'>
@@ -115,11 +107,11 @@ export default function Portfolio() {
 					</div>
 				</section>
 				<section className={Style.Projects}>
-					<div ref={dataVisTitle} className={Style.Title}>
+					<div className={Style.Title}>
 						<div className={Style.TitleLeft}>
 							<svg height='18' width='300'>
 								<polyline
-									className={!dataVisTitleIntersected ? Style.IntroIcon : Style.IntroIconAppear}
+									className={Style.IntroIconAppear}
 									points='10,10 30,30 50,10 70,30 90,10 110,30 130,10 150,30 170,10 190,30 210,10'
 								/>
 							</svg>
@@ -158,7 +150,7 @@ export default function Portfolio() {
 						<div className={Style.TitleLeft}>
 							<svg height='18' width='300'>
 								<polyline
-									className={!webDevTitleIntersected ? Style.IntroIcon : Style.IntroIconAppear}
+									className={!webDevTitleIntersected ? Style.IntroIcon : Style.IntroIconAppear2}
 									points='10,10 30,30 50,10 70,30 90,10 110,30 130,10 150,30 170,10 190,30 210,10'
 								/>
 							</svg>
@@ -318,27 +310,7 @@ export default function Portfolio() {
 				</section>
 				<div className={Style.BottomBackground}></div>
 			</main>
-			{openDataVis === 1 ? (
-				<div className={Style.OpenDataVis}>
-					<div onClick={() => setOpenDataVis(false)}>
-						<BarChartRace />
-					</div>
-				</div>
-			) : openDataVis === 2 ? (
-				<div className={Style.OpenDataVis}>
-					<div onClick={() => setOpenDataVis(false)}>
-						<DinoTree />
-					</div>
-				</div>
-			) : openDataVis === 3 ? (
-				<div className={Style.OpenDataVis}>
-					<div onClick={() => setOpenDataVis(false)}>
-						<Sunburst />
-					</div>
-				</div>
-			) : (
-				<div></div>
-			)}
+			{openDataVis ? <D3Container close={() => setOpenDataVis(false)} project={openDataVis} /> : <></>}
 		</div>
 	);
 }

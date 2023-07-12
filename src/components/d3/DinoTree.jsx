@@ -95,13 +95,11 @@ function DinosaurTree() {
 
 	useEffect(() => {
 		const svg = select(svgRef.current)
-			.attr('id', 'dino-svg')
 			.attr('width', width + margin.left + margin.right)
 			.attr('height', height + margin.top + margin.bottom);
 
 		const dinoTree = svg
 			.append('g')
-			.attr('id', 'dino-tree')
 			.attr('width', width)
 			.attr('height', height)
 			.attr('viewBox', [-dy / 3, x0 - dx, width, height])
@@ -488,7 +486,11 @@ function DinosaurTree() {
 		};
 	}, []);
 
-	return <svg ref={svgRef} id='dino-svg' />;
+	return (
+		<div className='main-container'>
+			<svg ref={svgRef} id='dino-tree-container' />
+		</div>
+	);
 }
 
 export default DinosaurTree;

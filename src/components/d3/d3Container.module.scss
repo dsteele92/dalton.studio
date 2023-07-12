@@ -1,0 +1,167 @@
+@import 'sass';
+
+.D3Container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+
+	display: grid;
+	grid-template-rows: repeat(5, min-content);
+	justify-items: center;
+	background-color: white;
+	padding: $padding-vertical $padding-horizontal;
+	@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+		padding: 0 0;
+		height: 100%;
+		z-index: 10;
+		padding: 75px 5px 30px;
+	}
+	overflow: scroll;
+
+	.Back {
+		position: absolute;
+		top: $padding-vertical;
+		right: $padding-horizontal;
+		// align-self: flex-end;
+		// width: 80px;
+		margin-left: 20px;
+		color: grey;
+		font-size: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		h4 {
+			width: 100%;
+			text-align: center;
+			font-size: 18px;
+			font-weight: 300;
+			letter-spacing: 1pt;
+			color: grey;
+			transition: all 0.2s linear;
+		}
+		transition: all 0.2s linear;
+
+		&:hover {
+			color: black;
+			cursor: pointer;
+			h4 {
+				color: black;
+				// letter-spacing: 2pt;
+			}
+		}
+
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			font-size: 24px;
+			h4 {
+				font-size: 14px;
+			}
+			top: 25px;
+			right: calc(100% - 65px);
+		}
+	}
+
+	h2 {
+		width: 100%;
+		padding: 5px 5%;
+		text-align: center;
+		font-family: 'Aboreto';
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 30px;
+		letter-spacing: 0.5pt;
+		color: black;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			font-size: 24px;
+		}
+	}
+	h3 {
+		width: 100%;
+		text-align: left;
+		font-size: 22px;
+		text-transform: uppercase;
+		font-weight: 300;
+		letter-spacing: 1pt;
+		color: grey;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			// padding: 10px 20px;
+			font-size: 18px;
+		}
+	}
+	.Info {
+		width: 100%;
+		padding: 0 5%;
+		margin: 5px 0 10px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.SvgContainer {
+		height: fit-content;
+		width: fit-content;
+		max-width: 95%;
+		overflow-x: scroll;
+		// overflow-y: auto;
+		// display: flex;
+		// justify-content: flex-start;
+		// overflow: auto;
+		// padding: 0 5%;
+		// margin: 5px 0;
+	}
+
+	h4 {
+		// width: 100%;
+		// text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 300;
+		letter-spacing: 1pt;
+		color: grey;
+
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			font-size: 14px;
+			opacity: 1;
+		}
+	}
+
+	p {
+		font-size: 16px;
+		font-weight: 100;
+		letter-spacing: 1pt;
+	}
+
+	.References {
+		width: 100%;
+		padding: 0 5%;
+		margin: 10px 0;
+
+		p {
+			color: black;
+			font-weight: 300;
+			font-size: 14px;
+		}
+	}
+	.GitHub {
+		width: 100%;
+		display: flex;
+		padding: 0 5%;
+		margin: 10px 0;
+
+		a {
+			width: fit-content;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			text-decoration: none;
+			h4 {
+				vertical-align: middle;
+			}
+			span {
+				color: black;
+				font-size: 30px;
+				margin-left: 5px;
+			}
+		}
+	}
+}

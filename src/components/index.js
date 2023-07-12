@@ -19,3 +19,4 @@ export { default as useIsIntersecting } from './hooks/useIsIntersecting.jsx';
 export { default as DinoTree } from './d3/DinoTree.jsx';
 export { default as BarChartRace } from './d3/BarChartRace.jsx';
 export { default as Sunburst } from './d3/Sunburst.jsx';
+export { default as D3Container } from './d3/D3Container.jsx';
