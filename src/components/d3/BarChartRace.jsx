@@ -3,6 +3,7 @@ import { select, selectAll, pointer } from 'd3-selection';
 import { csvParse, autoType } from 'd3-dsv';
 import { group } from 'd3-array';
 import { easeLinear } from 'd3-ease';
+import { transition } from 'd3-transition';
 
 import csvData from '../../assets/data/nbaData.js';
 
