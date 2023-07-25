@@ -114,7 +114,7 @@ body, html {
 }
 
 .tooltip {
-  width: 150px;
+  width: 160px;
   height: fit-content;
   background-color: white;
   border: 1px solid black;
@@ -122,8 +122,8 @@ body, html {
   padding: 5px;
 }
 
-h4 {
-  font-size: 10px;
+.tooltip h4 {
+  font-size: 12px;
   font-weight: 100;
   letter-spacing: 0.75pt;
   color: black;

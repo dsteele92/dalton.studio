@@ -454,7 +454,11 @@ function BarChartRace() {
 							onChange={(e) => setRunSpeed(e.target.value)}
 						/>
 					</div>
-					<button id='play-button' className='bounce' onClick={() => buttonClick()} ref={ballRef}>
+					<button
+						id='play-button'
+						className={play ? 'null' : 'bounce'}
+						onClick={() => buttonClick()}
+						ref={ballRef}>
 						PLAY
 					</button>
 				</div>
