@@ -150,9 +150,9 @@ export default function Home() {
 					</svg>
 					<h2>Hi, I'm Dalton</h2>
 					<h3>
-						Software Engineer & Personal Trainer
+						Web Developer & Personal Trainer
 						<br />
-						based in Los Angeles, California
+						based in Los Angeles, CA & Copenhagen, DK.
 					</h3>
 				</div>
 			</div>

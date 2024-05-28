@@ -87,21 +87,21 @@ export default function About() {
 							</svg>
 						</li>
 						<li>
-							<h3>Software Engineer</h3>
+							<h3>Web Developer</h3>
 							<h4>
-								The Find Firm & Freelance <span>2022-Present</span>
+								CharacterStrong <span>2023-Present</span>
 							</h4>
 						</li>
 						<li>
-							<h3>Owner, Personal Trainer</h3>
+							<h3>Web Developer</h3>
 							<h4>
-								Steele Fitness, LLC <span>2017-Present</span>
+								Independent Contractor <span>2021-2023</span>
 							</h4>
 						</li>
 						<li>
-							<h3>Personal Trainer</h3>
+							<h3>Founder, Health & Wellness Coach</h3>
 							<h4>
-								Equinox <span>2016-2017</span>
+								Steele Fitness LLC <span>2017-Present</span>
 							</h4>
 						</li>
 					</ul>
@@ -117,19 +117,19 @@ export default function About() {
 						<li>
 							<h3>Master of Science, Medical Sciences</h3>
 							<h4>
-								University of Colorado, Denver <span>2021</span>
+								University of Colorado, Denver <span>2018-2020</span>
 							</h4>
 						</li>
 						<li>
 							<h3>Master of Science, Organic Chemistry</h3>
 							<h4>
-								University of California, Los Angeles <span>2016</span>
+								University of California, Los Angeles <span>2014-2016</span>
 							</h4>
 						</li>
 						<li>
 							<h3>Bachelor of Science, Chemistry</h3>
 							<h4>
-								Florida International University <span>2014</span>
+								Florida International University <span>2010-2014</span>
 							</h4>
 						</li>
 					</ul>
