@@ -1,26 +1,14 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import Style from './portfolio.module.scss';
-import { LinksLine, LoadingBounce, ScrollArrowSide, useHasIntersected, D3Container } from 'components';
+import { LinksLine, LoadingBounce, useHasIntersected, D3Container } from 'components';
 
 import { SiMaterialui, SiExpress, SiFirebase, SiD3Dotjs } from 'react-icons/si';
-import { GrCloudComputer } from 'react-icons/gr';
-import { AiOutlineCloudServer } from 'react-icons/ai';
-import {
-	DiReact,
-	DiJsBadge,
-	DiMongodb,
-	DiFirebase,
-	DiHtml5,
-	DiCss3Full,
-	DiGithubBadge,
-	DiNpm,
-	DiNodejsSmall,
-	DiSass,
-} from 'react-icons/di';
+import { DiReact, DiMongodb, DiHtml5, DiGithubBadge, DiSass } from 'react-icons/di';
+import { FaAws } from 'react-icons/fa';
 
 const goalsAppImg = require('../../assets/images/goals_app.png');
 const bookingImg = require('../../assets/images/direct_booking_screenshot.png');
-const findFirmImg = require('../../assets/images/find_firm.png');
+const jdImg = require('../../assets/images/jd.png');
 const triviaImg = require('../../assets/images/trivia_game.png');
 const dataVisTree = require('../../assets/images/dino_tree.png');
 const dataVisSunburst = require('../../assets/images/sunburst.png');
@@ -157,10 +145,6 @@ export default function Portfolio() {
 							<h2>Web Sites & Web Apps</h2>
 							<h3>Built with React.js</h3>
 						</div>
-						<div className={Style.TitleRight}>
-							<DiReact />
-							<p>React.js</p>
-						</div>
 					</div>
 					<section className={Style.WebDev}>
 						<div className={Style.WebDevProject1}>
@@ -181,12 +165,39 @@ export default function Portfolio() {
 									<p>Firebase</p>
 								</div>
 								<div className={Style.Icon}>
-									<AiOutlineCloudServer />
-									<p>API</p>
-								</div>
-								<div className={Style.Icon}>
 									<SiExpress />
 									<p>Express</p>
+								</div>
+								<div className={Style.Icon}>
+									<DiReact />
+									<p>React.js</p>
+								</div>
+								<div className={Style.Icon}>
+									<DiSass />
+									<p>Sass</p>
+								</div>
+								<div className={Style.Icon}>
+									<DiHtml5 />
+									<p>HTML</p>
+								</div>
+							</div>
+						</div>
+						<div className={Style.WebDevProject4}>
+							<a
+								className={Style.Anchor}
+								href='https://extraordinary-raindrop-d2a470.netlify.app/'
+								target='_blank'
+								rel='noopener noreferrer'>
+								<div className={Style.Description}>
+									<h4>Web Page</h4>
+									<h3>JD Health & Wellness</h3>
+								</div>
+								<img className={Style.Image} src={jdImg} alt='medical practice site' />
+							</a>
+							<div className={Style.Info}>
+								<div className={Style.Icon}>
+									<FaAws />
+									<p>AWS</p>
 								</div>
 								<div className={Style.Icon}>
 									<DiReact />
@@ -224,10 +235,6 @@ export default function Portfolio() {
 									<p>Express</p>
 								</div>
 								<div className={Style.Icon}>
-									<DiFirebase />
-									<p>REST API</p>
-								</div>
-								<div className={Style.Icon}>
 									<DiReact />
 									<p>React.js</p>
 								</div>
@@ -256,37 +263,6 @@ export default function Portfolio() {
 									<h3>Trivia Game</h3>
 								</div>
 								<img className={Style.Image} src={triviaImg} alt='trivia game' />
-							</a>
-							<div className={Style.Info}>
-								<div className={Style.Icon}>
-									<AiOutlineCloudServer />
-									<p>API</p>
-								</div>
-								<div className={Style.Icon}>
-									<DiReact />
-									<p>React.js</p>
-								</div>
-								<div className={Style.Icon}>
-									<DiSass />
-									<p>Sass</p>
-								</div>
-								<div className={Style.Icon}>
-									<DiHtml5 />
-									<p>HTML</p>
-								</div>
-							</div>
-						</div>
-						<div className={Style.WebDevProject4}>
-							<a
-								className={Style.Anchor}
-								href='http://thefindfirm.com/'
-								target='_blank'
-								rel='noopener noreferrer'>
-								<div className={Style.Description}>
-									<h4>Web Page</h4>
-									<h3>The Find Firm, LLC</h3>
-								</div>
-								<img className={Style.Image} src={findFirmImg} alt='the find firm' />
 							</a>
 							<div className={Style.Info}>
 								<div className={Style.Icon}>

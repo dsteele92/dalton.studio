@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Style from './about.module.scss';
 
 import { LinksGrid, ScrollArrowTopOnly, ScrollArrowBottom, LoadingBounce, useHasIntersected } from 'components';

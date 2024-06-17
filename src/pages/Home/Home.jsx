@@ -2,8 +2,6 @@ import { React, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Style from './home.module.scss';
 import { useHasIntersected, Button, ButtonAlt, ScrollArrow } from 'components';
-
-import { BsArrowDown } from 'react-icons/bs';
 import { FaLinkedin, FaRunning, FaLeaf } from 'react-icons/fa';
 import { GiMeditation } from 'react-icons/gi';
 import { SiPostman, SiExpress } from 'react-icons/si';

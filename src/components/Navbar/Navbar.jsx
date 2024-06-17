@@ -1,11 +1,8 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { RightNav } from 'components';
-
-import { FaLinkedin } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 import { RiLinkedinLine } from 'react-icons/ri';
-import { MdOutlineAlternateEmail } from 'react-icons/md';
 
 import Style from './navbar.module.scss';
 
@@ -112,7 +109,7 @@ export default function Navbar() {
 					</li>
 					<li className={menuClick ? Style.ListFall : Style.List} onClick={() => setMenuClick(!menuClick)}>
 						<Link to='/portfolio' className={location.pathname === '/portfolio' ? Style.Current : ''}>
-							<h3>CODING PROJECTS</h3>
+							<h3>WEB DEVELOPMENT</h3>
 							<div
 								className={
 									location.pathname === '/portfolio'
@@ -205,7 +202,7 @@ export default function Navbar() {
 						className={mobileMenuClick ? Style.ListFall : Style.List}
 						onClick={() => setMobileMenuClick(!mobileMenuClick)}>
 						<Link to='/portfolio' className={location.pathname === '/portfolio' ? Style.Current : ''}>
-							<h3>CODING PROJECTS</h3>
+							<h3>WEB DEVELOPMENT</h3>
 							<div
 								className={
 									location.pathname === '/portfolio' ? Style.HighlightCurrentCoding : ''
