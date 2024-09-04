@@ -170,10 +170,7 @@ export default function Home() {
 							<div className={Style.Dev}>DEV.</div>
 						</div>
 						<div className={textWDIntersected ? Style.TextAppear : Style.Text} ref={textWD}>
-							<h2>
-								I am a Front-End Developer with a passion for creating dynamic and intuitive user
-								experiences.
-							</h2>
+							<h2>I am a Full Stack Developer with a passion for building impactful software.</h2>
 						</div>
 						<div className={textWDIntersected ? Style.ButtonsAppear : Style.Buttons}>
 							<Link to='/about'>
